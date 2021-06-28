@@ -1,0 +1,35 @@
+#img-bg-teste{
+    background-image: url('../../assets/img/universe2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+button{
+    border-radius: 5px;
+    width: 200px;
+}
+
+.ic-menu{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.71)!important;    
+}
+
+.bt-ed-1{
+    background:#00A33E;
+}
+.bt-ed-2{
+    background:#FF473D;
+}
+.bt-ed-3{
+    background:#F08922;
+}
+.bt-ed-4{
+    background:#22BFF0;
+}
+.bt-ed-5{
+    background:#E485FF;
+}
+
+
