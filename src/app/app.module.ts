@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SobrenosComponent
+    SobrenosComponent,
+    InicioComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,
