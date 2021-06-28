@@ -1,0 +1,36 @@
+.bg-img{
+    background-image: url(../../assets/img/OGXT7Z.jpg);
+  }
+.container{
+    background: linear-gradient(#c4085015, #070d2a15)
+}
+.avatar-hover{
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(2, 2, 34, 0.911);
+    border-radius: 100%;
+    display: block;
+    
+  }
+  
+  .avatar-hover:hover .overlay {
+    opacity: 0.7;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  
