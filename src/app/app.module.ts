@@ -13,6 +13,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{
     provide: LocationStrategy,
