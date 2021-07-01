@@ -1,8 +1,6 @@
-.bg-img{
-    background-image: url(../../assets/img/OGXT7Z.jpg);
-  }
+
 .container{
-    background: linear-gradient(#c4085015, #070d2a15)
+    background: linear-gradient(#c4085015, #d4dbfd15)
 }
 .avatar-hover{
     position: relative;
