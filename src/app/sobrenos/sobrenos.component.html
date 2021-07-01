@@ -1,26 +1,31 @@
 
-
-
     <div id="img-bg-qsn" class="container-fluid">
 
         <div class="container">
 
             <div class="row mb-3 d-flex justify-content-center">
 
-                <div class="col-md-6">
-                    <img src="https://i.imgur.com/O5644ph.png" alt="Foguete decolando" height="600vh" width="600vh">
+                <div class="col-md-6 mt-5">
+                    <div id="container-img"><img src="https://i.imgur.com/O5644ph.png" alt="Foguete decolando"></div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mt-5">
 
                     <h1 class="fw-bold text-white"> Olá, tripulante! Bem vindo(a) à bordo!</h1>
 
-                    <a class="btn btn-outline-light mt-4" href="#">Entrar</a>
-                    <a class="btn btn-outline-light ms-3 mt-4" href="#">Cadastrar</a>
+                    <button class="btn btn-efeito fs-4 mt-4" type="submit" routerLink="/entrar" >Entrar</button>
+                    <button class="btn btn-efeito fs-4 ms-3 mt-4" type="submit" routerLink="/cadastrar" >Cadastrar</button>
+                    
+
+                    <div class="row mt-1 d-flex justify-content-end">
+                        <div class="col-md-1">
+                            <img class="planetas-fixed" src="../../assets/img/6.png" alt="planeta" width="85px">
+                        </div>
+                    </div>
 
                     <div class="row mt-5 d-flex justify-content-end">
-                        <div class="col-md-6">
-                            <img src="../../assets/img/6.png" alt="planeta" height="90px" width="90px">
+                        <div class="col-md-3">
+                            <img class="planetas-fixed" src="../../assets/img/10.png" alt="planeta" width="45px">
                         </div>
                     </div>
     
@@ -69,9 +74,9 @@
 
         </div>
 
-
         <app-equipe></app-equipe>
     </div>
+  
 
   
     

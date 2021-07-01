@@ -6,6 +6,36 @@
 
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     
-
 }
+
+#container-img {
+    
+    position: relative;
+}
+#container-img img {
+    width: 100%
+}
+
+.planetas-fixed{
+    position: fixed;
+}
+
+
+.btn-efeito{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.212);;
+
+    border-radius: 32px;
+    border: 1px solid white;
+}
+.btn-efeito:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
