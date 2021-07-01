@@ -1,8 +1,6 @@
-.bg-img{
-    background-image: url(../../assets/img/OGXT7Z.jpg);
-  }
+
 .container{
-    background: linear-gradient(#c4085015, #070d2a15)
+    background: linear-gradient(#c4085015, #d4dbfd15)
 }
 .avatar-hover{
     position: relative;
@@ -26,6 +24,8 @@
   
   .avatar-hover:hover .overlay {
     opacity: 0.7;
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
   }
   
   a{
