@@ -16,11 +16,11 @@
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0 d-flex align-items-center">
                     <li class="nav-item ps-2 m-auto">
                         <img id="foto-usuario" class="img-fluid rounded-circle"
-                            src="https://image.freepik.com/vetores-gratis/ilustracao-de-usuario-avatar-icone_53876-5908.jpg"
+                            src="{{foto}}"
                             alt="foto">
                     </li>
                     <li class="nav-item ps-2">
-                        <p class="m-0 fs-16">Nome do usuário</p>
+                        <p class="m-0 fs-16">{{nome}}</p>
                     </li>
                 </ul>
 
@@ -32,7 +32,7 @@
                         </a>
                         <ul class="dropdown-menu mt-2" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Editar conta</a></li>
-                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                            <li><a (click)="sair()" class="dropdown-item">Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  nome:string=environment.nome
+  foto:string=environment.foto
+  constructor(
+    private router: Router
 
-  ngOnInit(): void {
+  ) { }
+
+  ngOnInit() {
+    window.scroll(0,0)
+
+  }
+
+  sair() {
+    this.router.navigate(["/sobrenos"])
+    environment.id=0
+    environment.nome=''
+    environment.token=''
+    environment.foto=''
+    environment.instrutor=false
   }
 
 }
