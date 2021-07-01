@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf='auth.logado()'></app-navbar>
 
 <div class="container-fluid">
    
@@ -39,4 +39,4 @@
 
 </div>
 
-<app-footer></app-footer>
+<app-footer *ngIf='auth.logado()'></app-footer>

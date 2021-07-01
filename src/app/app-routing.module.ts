@@ -7,7 +7,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
  
 
 const routes: Routes = [
-  {path:'',redirectTo:'entrar', pathMatch:'full'},
+  {path:'',redirectTo:'sobrenos', pathMatch:'full'},
 
   {path:'entrar',component: EntrarComponent},
 
