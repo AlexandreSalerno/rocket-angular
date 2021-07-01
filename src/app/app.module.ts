@@ -13,8 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { NavbarLandingComponent } from './navbar-landing/navbar-landing.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     SobrenosComponent,
     InicioComponent,
     EntrarComponent,
+    NavbarLandingComponent,
     CadastrarComponent
   ],
   imports: [

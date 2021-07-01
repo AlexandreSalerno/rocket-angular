@@ -1,0 +1,10 @@
+.navbar1{
+    background-color: rgba(77, 106, 184, 0.178)!important;
+}
+
+.contorno {
+    font-family: Helvetica;
+    color: #FFF;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
