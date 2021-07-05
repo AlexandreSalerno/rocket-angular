@@ -6,5 +6,9 @@
     font-family: Helvetica;
     color: #FFF;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.315);
+}
+
+a{
+    text-decoration: none;
 }
