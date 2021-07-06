@@ -16,6 +16,9 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { PostagensComponent } from './postagens/postagens.component';
 import { NavbarLandingComponent } from './navbar-landing/navbar-landing.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeletComponent } from './delet/tema-delet/tema-delet.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     EntrarComponent,
     PostagensComponent,
     NavbarLandingComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeletComponent
   ],
   imports: [
     BrowserModule,
