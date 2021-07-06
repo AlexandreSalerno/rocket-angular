@@ -5,6 +5,7 @@ import { TemaDeletComponent } from './delet/tema-delet/tema-delet.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { PostagensComponent } from './postagens/postagens.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { TemaComponent } from './tema/tema.component';
 
@@ -25,7 +26,9 @@ const routes: Routes = [
 
   {path:'tema-edit/:id', component: TemaEditComponent},
 
-  {path:'tema-delet/:id', component: TemaDeletComponent}
+  {path:'tema-delet/:id', component: TemaDeletComponent},
+
+  {path:'postagens', component: PostagensComponent}
 
 ];
 

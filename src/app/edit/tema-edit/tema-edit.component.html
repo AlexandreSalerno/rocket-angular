@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row d-flex align-items-center" id="img-bg-interior">
    
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-6">
                 <div>
                     <h1 class="text-center">Atualizar matéria</h1>
@@ -9,12 +9,27 @@
                 <div class="form-group">
                     <label for="descrição">Descrição</label>
                     <input type="text" class="form-control" id="descricao" [(ngModel)]='tema.nome'>
-                    
                 </div>
+
+                <div class="col-md-3 ">
+                    <div class="form-group">
+                        <select name="serie" id="serie" class="form-select br-32" (change)='numeroSerie($event)'>
+                            <option value="{{tema.serie}}">{{tema.serie}}</option>
+                            <option *ngIf='tema.serie != 1' value="1">1</option>
+                            <option *ngIf='tema.serie != 2' value="2">2</option>
+                            <option *ngIf='tema.serie != 3' value="3">3</option>
+                            <option *ngIf='tema.serie != 4' value="4">4</option>
+                            <option *ngIf='tema.serie != 5' value="5">5</option>
+
+                            <!-- <option *ngFor='let x of test' value="{{x}}">{{x}}</option> -->
+                        </select>
+                    </div>
+                </div>
+
                 <div class="d-flex justify-content-center">
                      <button class="btn btn-danger mx-3" routerLink='/tema'>Cancelar</button>
-                     <button class="btn btn-danger" (click)='atualizar()'>atualizar</button>
-                    <button class="btn btn-success mx-3">atualizar</button>
+                     <button class="btn  btn-success mx-3" (click)='atualizar()'>atualizar</button>
+                    <!-- <button class="btn>atualizar</button> -->
                 </div>
             </div>
         </div>

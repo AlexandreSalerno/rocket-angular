@@ -12,6 +12,8 @@ import { environment } from 'src/environments/environment.prod';
 export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema()
+  serie:number
+  test:number[] = [ 1, 2, 3, 4, 5]
 
   constructor(
     private router: Router,
@@ -39,12 +41,17 @@ export class TemaEditComponent implements OnInit {
   }
 
   atualizar() {
+    this.tema.serie = this.serie
     this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       alert('Matéria atualizada com sucesso!')
       this.router.navigate(['/tema'])
     })
 
+  }
+
+  numeroSerie(event: any) {
+    this.serie = event.target.value
   }
 
 }

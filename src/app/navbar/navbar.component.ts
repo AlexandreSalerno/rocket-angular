@@ -11,6 +11,9 @@ export class NavbarComponent implements OnInit {
 
   nome:string=environment.nome
   foto:string=environment.foto
+
+  isInstruitor:boolean = environment.instrutor
+
   constructor(
     private router: Router
 

@@ -24,7 +24,7 @@
                     </li>
                 </ul>
                 <!-- TEMPORARIO -->
-                <button class="btn bg-transparent" routerLink='/tema'>TEMA</button>
+                <button *ngIf='isInstruitor' class="btn bg-transparent" routerLink='/tema'>TEMA</button>
                 <!-- /TEMPORARIO -->
 
                 <ul class="navbar-nav me-4 mb-2 mb-lg-0 d-flex align-items-center">

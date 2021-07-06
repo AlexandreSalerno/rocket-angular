@@ -13,6 +13,7 @@ export class TemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTema: Tema[]
+  serie: number
 
   constructor(
     private temaService: TemaService,
@@ -30,6 +31,7 @@ export class TemaComponent implements OnInit {
   }
 
   cadastrar() {
+    this.tema.serie = this.serie
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       alert("Tema cadastrado com sucesso!")
@@ -42,6 +44,10 @@ export class TemaComponent implements OnInit {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTema = resp
     })
+  }
+
+  numeroSerie(event: any) {
+    this.serie = event.target.value
   }
 
 }
