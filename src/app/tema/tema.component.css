@@ -1,0 +1,31 @@
+#bg-tema{
+    background-image: url('https://i.imgur.com/DHQKSpC.jpg');
+
+    min-height: 40rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.br-32 {
+    border-radius: 32px;
+}
+
+.btn-efeito{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.37);;
+
+    border-radius: 32px;
+    border: 1px solid white;
+}
+.btn-efeito:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
+.bg-light {
+    background-color: rgba(255, 255, 255, 0.644)!important;
+}
