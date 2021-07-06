@@ -39,7 +39,7 @@ findByIdTema(id: number) {
 
 deleteTema(){
   this.temaService.deleteTema(this.idTema).subscribe(()=>{
-    alert(' Tema apagado com sucesso! ')
+    alert('Matéria apagada com sucesso! ')
     this.router.navigate(['/tema'])
   })
 
