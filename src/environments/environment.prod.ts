@@ -4,5 +4,7 @@ export const environment = {
   nome: '',
   token: '',
   foto: '',
-  instrutor: false
+  instrutor: false,
+
+  uri:'http://localhost:8080'
 };

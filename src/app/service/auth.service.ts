@@ -15,11 +15,11 @@ export class AuthService {
   ) { }
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>('http://localhost:8080/usuarios/logar', userLogin) //url local
+    return this.http.post<UserLogin>(`${environment.uri}/usuarios/logar`, userLogin) //url local
   }
 
   cadastrar(user: User): Observable<User> {
-    return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user) //url local
+    return this.http.post<User>(`${environment.uri}/usuarios/cadastrar`, user) //url local
   }
 
   logado() {
