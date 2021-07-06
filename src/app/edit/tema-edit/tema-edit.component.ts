@@ -13,7 +13,8 @@ export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema()
   serie:number
-  test:number[] = [ 1, 2, 3, 4, 5]
+  // test:number[] = [ 1, 2, 3, 4, 5]
+  test:boolean = false
 
   constructor(
     private router: Router,

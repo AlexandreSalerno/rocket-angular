@@ -14,14 +14,13 @@
                 <div class="col-md-3 ">
                     <div class="form-group">
                         <select name="serie" id="serie" class="form-select br-32" (change)='numeroSerie($event)'>
-                            <option value="{{tema.serie}}">{{tema.serie}}</option>
-                            <option *ngIf='tema.serie != 1' value="1">1</option>
-                            <option *ngIf='tema.serie != 2' value="2">2</option>
-                            <option *ngIf='tema.serie != 3' value="3">3</option>
-                            <option *ngIf='tema.serie != 4' value="4">4</option>
-                            <option *ngIf='tema.serie != 5' value="5">5</option>
+                            <!-- EXEMPLO SELECTED -->
+                            <option [selected]="tema.serie == 1" value="1">1</option>
+                            <option [selected]="tema.serie == 2" value="2">2</option>
+                            <option [selected]="tema.serie == 3" value="3">3</option>
+                            <option [selected]="tema.serie == 4" value="4">4</option>
+                            <option [selected]="tema.serie == 5" value="5">5</option>
 
-                            <!-- <option *ngFor='let x of test' value="{{x}}">{{x}}</option> -->
                         </select>
                     </div>
                 </div>
