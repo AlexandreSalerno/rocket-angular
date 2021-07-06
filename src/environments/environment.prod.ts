@@ -5,6 +5,7 @@ export const environment = {
   token: '',
   foto: '',
   instrutor: false,
+  serie:0,
 
   uri:'http://localhost:8080'
 };

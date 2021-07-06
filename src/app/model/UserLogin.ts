@@ -6,4 +6,5 @@ export class UserLogin {
     public token: string
     public foto: string
     public instrutor: boolean
+    public serie: number
 }

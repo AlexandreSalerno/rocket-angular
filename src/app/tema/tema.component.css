@@ -1,7 +1,8 @@
 #bg-tema{
     background-image: url('https://i.imgur.com/DHQKSpC.jpg');
 
-    min-height: 40rem;
+    /* min-height: 40rem; */
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
