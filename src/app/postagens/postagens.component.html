@@ -44,23 +44,23 @@
                 <form>
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="text" aria-describedby="text">
+                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" name="titulo" aria-describedby="text">
                     </div>
                     <div class="mb-3">
                         <label for="tema" class="form-label">Escolha um tema:</label>
-                        <select name="idTema" id="tema" class="form-select">
-                            <option selected value="">Tema</option>
+                        <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select" (change)="findByIdTema()">
+                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
+                                {{item.nome}}
+                            </option>
                             <!-- TEMAS -->
-                            <option value=""></option>
-
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="conteudo" class="form-label">Conteudo da Postagem</label>
-                        <textarea name="texto" id="texto" rows="3" class="form-control"></textarea>
+                        <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="div d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success me-5">Enviar!</button>
+                        <button type="submit" class="btn btn-success me-5" (click)="publicar()">Enviar!</button>
                     </div>
                 </form>
             </div>
@@ -85,18 +85,18 @@
                 <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
                     aria-labelledby="nav-todasPostagens-tab">
 
-                    <div class="row mt-2 ic-menu">
+                    <div *ngFor="let item of listaPostagens" class="row mt-2 ic-menu">
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
                             <img id="foto-usuario" class="rounded-circle"
-                                src="https://avatars.githubusercontent.com/u/79742110" alt="foto" width="55px">
-                            <p class="text-white fs-4 fw-bold">Nome do Autor</p>
-                            <p class="text-white fs-5 me-1">tema</p>
+                                src="{{item.usuario.foto}}" alt="foto" width="55px">
+                            <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
+                            <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
                         <div class="mb-2">
-                            <p class="text-center fs-1 fw-bold">Título</p>
-                            <p class="fs-3">Conteúdo</p>
+                            <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
+                            <p class="fs-3">{{item.conteudo}}</p>
                             <hr>
-                            <p class="text-end"><small> DD:MM:YYYY</small></p>
+                            <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
                         </div>
                     </div>
 
@@ -108,22 +108,21 @@
                 <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel"
                     aria-labelledby="nav-minhasPostagens-tab">
 
-                    <div class="row mt-2 ic-menu">
+                    <div *ngFor="let item of listaPostagens" class="row mt-2 ic-menu">
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
                             <img id="foto-usuario" class="rounded-circle"
-                                src="https://avatars.githubusercontent.com/u/79742110" alt="foto" width="55px">
-                            <p class="text-white fs-4 fw-bold">Nome do Autor</p>
-                            <p class="text-white fs-5 me-1">tema</p>
+                                src="{{item.usuario.foto}}" alt="foto" width="55px">
+                            <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
                         <div class="mb-2">
-                            <p class="text-center fs-1 fw-bold">Título</p>
-                            <p class="fs-3">Conteúdo</p>
+                            <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
+                            <p class="fs-3">{{item.conteudo}}</p>
                             <hr>
-                            <p class="text-end"><small> DD:MM:YYYY</small></p>
+                            <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
                         </div>
                         <div class="d-flex justify-content-around ic-menu3">
-                            <button class="btn btn-info my-2 px-3">Editar</button>
-                            <button class="btn btn-danger my-2 px-3">Apagar</button>
+                            <button class="btn btn-info my-2 px-3" [routerLink]="['/postagens-edit', item.id]">Editar</button>
+                            <button class="btn btn-danger my-2 px-3" [routerLink]="['/postagens-delet', item.id]">Apagar</button>
                         </div>
                     </div>
 

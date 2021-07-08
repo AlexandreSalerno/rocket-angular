@@ -36,7 +36,8 @@ export class PostagensService {
 
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>(`${environment.uri}/postagens`, this.token)
+    console.log(this.token)
+    return this.http.post<Postagem>(`${environment.uri}/postagens`, postagem, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
@@ -44,13 +45,13 @@ export class PostagensService {
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`${environment.uri}/postagens/${id}`, this.token)
+    return this.http.delete(`${environment.uri}/postagens/delete/${id}`, this.token)
   }
 
   
 
   getByIdUser(id: number): Observable<User>{
-    return this.http.get<User>(`${environment.uri}/usuarios/delete/${id}`, this.token)
+    return this.http.get<User>(`${environment.uri}/usuarios/${id}`, this.token)
   }
 
   
