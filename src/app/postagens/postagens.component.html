@@ -1,28 +1,28 @@
-<div class="container-fluid">
-   
-    <div class="row d-flex align-items-center" id="img-bg-teste">
-        
-        <div class="col-sm-3">
+<div class="cotainer d-flex justify-content-center principal" id="img-bg-interior">
+    <!-- MENU -->
+    <div class="row px-5 mt-5">
+        <div class="col-md-12">
 
-            <div class="row d-flex justify-content-center px-5">
+            <div class="row d-flex justify-content-center">
 
-                <div class="ic-menu d-flex justify-content-center">
+                <div class="col-md-12 ic-menu d-flex justify-content-center">
 
-                    <div class="btn-group-vertical d-flex ">
-                        <div class="w-auto p-3">
-                            <button type="button" class="btn bt-ed-1">MATEMÁTICA</button>
+                    <div class="btn-group-vertical">
+
+                        <div class="pt-5 p-2">
+                            <button type="button" class="menu-button btn bt-ed-1">MATEMÁTICA</button>
                         </div>
-                        <div class="w-auto p-3">
-                            <button type="button" class="btn bt-ed-2">PORTUGUÊS</button>
+                        <div class="p-2">
+                            <button type="button" class="menu-button btn bt-ed-2">PORTUGUÊS</button>
                         </div>
-                        <div class="w-auto p-3">
-                            <button type="button" class="btn bt-ed-3">HISTÓRIA</button>
+                        <div class="p-2">
+                            <button type="button" class="menu-button btn bt-ed-3">HISTÓRIA</button>
                         </div>
-                        <div class="w-auto p-3">
-                            <button type="button" class="btn bt-ed-4">GEOGRAFIA</button>
+                        <div class="p-2">
+                            <button type="button" class="menu-button btn bt-ed-4">GEOGRAFIA</button>
                         </div>
-                        <div class="w-auto p-3 ">
-                            <button type="button" class="btn bt-ed-5">CIÊNCIAS</button>
+                        <div class="p-2 pb-5">
+                            <button type="button" class="menu-button btn bt-ed-5">CIÊNCIAS</button>
                         </div>
 
                     </div>
@@ -32,64 +32,105 @@
             </div>
 
         </div>
-
-        <div class="col-sm-9 px-5 container">
-            <div class="col-sm-10">
-                <div class="row my-5 py-5 ic-menu d-flex justify-content-center">
-                    <h1 class="mb-2">Que tal compartilhar algo que você aprendeu?</h1>
-                    <form>
-                        <div class="mb-2">
-                          <label for="título" class="form-label">Título da postagem</label>
-                          <input type="text" class="form-control" id="text" aria-describedby="text">
-                        </div>
-                        <div class="mb-2 justify-content-center">
-                          <label for="conteudo" class="form-label">Conteudo da Postagem</label>
-                          <input type="text" class="form-control" id="text">
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Enviar!</button>
-                    </form>      
-                </div>
-                
-                <div class="row my-5 py-5 ic-menu">
-                    <div class="d-flex justify-content-between ic-menu2">
-                        <img id="foto-usuario" class="rounded-circle justify-content-"
-                                src="https://image.freepik.com/vetores-gratis/ilustracao-de-usuario-avatar-icone_53876-5908.jpg"
-                                alt="foto">
-                        <h5>Nome do usuario</h5>
-                        <h4>Nome da materia</h4>
-                    </div>
-                    <h1>titulo da postagem</h1>
-                    <h2>Conteudo da postagem
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ex reiciendis consectetur, excepturi alias quod quis suscipit voluptatem nulla tenetur. Quo officiis cumque ipsum suscipit corrupti odio, nihil et accusantium!
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti quae sit laudantium molestias cumque harum aliquid animi dolor porro. Quasi odit libero architecto minus quia recusandae deleniti laudantium porro!
-                    </h2>  
-                </div>
-                <div class="row my-5 py-5 ic-menu">
-                    <div class="d-flex justify-content-between ic-menu2">
-                        <img id="foto-usuario" class="rounded-circle justify-content-"
-                                src="https://image.freepik.com/vetores-gratis/ilustracao-de-usuario-avatar-icone_53876-5908.jpg"
-                                alt="foto">
-                        <h5>Nome do usuario</h5>
-                        <h4>Nome da materia</h4>
-                    </div>
-                    <h1>titulo da postagem</h1>
-                    <h2>Conteudo da postagem</h2>  
-                </div>
-                <div class="row my-5 py-5 ic-menu">
-                    <div class="d-flex justify-content-between ic-menu2">
-                        <img id="foto-usuario" class="rounded-circle justify-content-"
-                                src="https://image.freepik.com/vetores-gratis/ilustracao-de-usuario-avatar-icone_53876-5908.jpg"
-                                alt="foto">
-                        <h5>Nome do usuario</h5>
-                        <h4>Nome da materia</h4>
-                    </div>
-                    <h1>titulo da postagem</h1>
-                    <h2>Conteudo da postagem</h2>  
-                </div>
-            </div>
-            
-        </div>
-
     </div>
+    <!-- /MENU -->
 
+    <!-- POSTAGENS -->
+    <!-- NOVA POSTAGENS -->
+    <div class="row mt-5">
+        <div class="col-md-11">
+            <div class="row ic-menu d-flex justify-content-center py-3">
+                <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="text" aria-describedby="text">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tema" class="form-label">Escolha um tema:</label>
+                        <select name="idTema" id="tema" class="form-select">
+                            <option selected value="">Tema</option>
+                            <!-- TEMAS -->
+                            <option value=""></option>
+
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="conteudo" class="form-label">Conteudo da Postagem</label>
+                        <textarea name="texto" id="texto" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="div d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success me-5">Enviar!</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /NOVA POSTAGENS -->
+
+            <!-- NAV-POSTAGENS -->
+            <nav>
+                <div class="nav nav-tabs d-flex justify-content-start mt-3" id="nav-tab" role="tablist">
+                    <button class="nav-link active text-dark fw-bold" id="nav-todasPostagens-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
+                        aria-selected="true">Todas as Postagens</button>
+
+                    <button class="nav-link text-dark fw-bold" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-minhasPostagens" type="button" role="tab"
+                        aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</button>
+                </div>
+            </nav>
+            <!-- /NAV-POSTAGENS -->
+
+            <div class="tab-content" id="nav-tabContent">
+                <!-- TODAS AS POSTAGENS -->
+                <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
+                    aria-labelledby="nav-todasPostagens-tab">
+
+                    <div class="row mt-2 ic-menu">
+                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+                            <img id="foto-usuario" class="rounded-circle"
+                                src="https://avatars.githubusercontent.com/u/79742110" alt="foto" width="55px">
+                            <p class="text-white fs-4 fw-bold">Nome do Autor</p>
+                            <p class="text-white fs-5 me-1">tema</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-center fs-1 fw-bold">Título</p>
+                            <p class="fs-3">Conteúdo</p>
+                            <hr>
+                            <p class="text-end"><small> DD:MM:YYYY</small></p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /TODAS POSTAGENS -->
+
+                <!-- MINHAS POSTAGENS -->
+
+                <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel"
+                    aria-labelledby="nav-minhasPostagens-tab">
+
+                    <div class="row mt-2 ic-menu">
+                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+                            <img id="foto-usuario" class="rounded-circle"
+                                src="https://avatars.githubusercontent.com/u/79742110" alt="foto" width="55px">
+                            <p class="text-white fs-4 fw-bold">Nome do Autor</p>
+                            <p class="text-white fs-5 me-1">tema</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-center fs-1 fw-bold">Título</p>
+                            <p class="fs-3">Conteúdo</p>
+                            <hr>
+                            <p class="text-end"><small> DD:MM:YYYY</small></p>
+                        </div>
+                        <div class="d-flex justify-content-around ic-menu3">
+                            <button class="btn btn-info my-2 px-3">Editar</button>
+                            <button class="btn btn-danger my-2 px-3">Apagar</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /MINHAS POSTAGENS -->
+            </div>
+            <!--/POSTAGENS -->
+        </div>
+    </div>
 </div>
