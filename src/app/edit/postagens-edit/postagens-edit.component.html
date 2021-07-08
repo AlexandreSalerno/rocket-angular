@@ -1,1 +1,47 @@
-<p>postagens-edit works!</p>
+<div class="container-fluid">
+    <div class="row d-flex align-items-center text-white" id="img-bg-interior">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Atualizar Postagem</h1>
+                </div>
+            </div>
+        
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+        
+                    <div class="form-group">
+                        <label for="titulo" class="fs-18">Título</label>
+                        <input type="text" class="form-control mt-2" id="titulo" placeholder="Digite o título">
+                        <!-- <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título"> -->
+                    </div>
+        
+                    <div class="form-group mt-3">
+                        <label for="conteudo" class="fs-18">Conteúdo</label>
+                        <textarea class="form-control mt-2" name="conteudo" id="conteudo" rows="3"></textarea>
+                        <!-- <textarea [(ngModel)]="postagem.conteudo" name="conteudo" id="conteudo" rows="3"></textarea> -->
+                    </div>
+        
+                    <div class="form-group mt-3">
+                        <label for="tema" class="fs-18">Matéria</label>
+                        <select class="form-select mt-2" name="tema" id="tema">
+                            <option value="0">
+                                Português
+                            </option>
+                        </select>
+                        <!-- <select [(ngModel)]="idTema" class="form-select" name="tema" id="tema" (change)="findByIdTema()">
+                            <option *ngFor="let item of listaTemas" value="{{item.id}}">
+                                {{item.nome}}
+                            </option>
+                        </select> -->
+                    </div>
+        
+                    <div class="d-flex justify-content-center mt-4">
+                        <button class="btn btn-efeito me-4 fs-4">Cancelar</button>
+                        <button class="btn btn-efeito fs-4">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
