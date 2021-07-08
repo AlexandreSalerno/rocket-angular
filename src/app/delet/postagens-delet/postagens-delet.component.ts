@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment.prod';
   templateUrl: './postagens-delet.component.html',
   styleUrls: ['./postagens-delet.component.css']
 })
+
 export class PostagensDeletComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
@@ -45,5 +46,5 @@ export class PostagensDeletComponent implements OnInit {
     })
     
   }
-
+  
 }
