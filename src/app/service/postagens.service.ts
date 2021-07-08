@@ -25,29 +25,32 @@ export class PostagensService {
   }
 
 
+  
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('http://localhost:8080/postagens', this.token)
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens`, this.token)
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`http://localhost:8080/postagens/id/${id}`, this.token)
+    return this.http.get<Postagem>(`${environment.uri}/postagens/id/${id}`, this.token)
   }
 
+
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('http://localhost:8080/postagens', this.token)
+    return this.http.post<Postagem>(`${environment.uri}/postagens`, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('http://localhost:8080/postagens', postagem, this.token)
+    return this.http.put<Postagem>(`${environment.uri}/postagens`, postagem, this.token)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
+    return this.http.delete(`${environment.uri}/postagens/${id}`, this.token)
   }
 
+  
 
   getByIdUser(id: number): Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, this.token)
+    return this.http.get<User>(`${environment.uri}/usuarios/delete/${id}`, this.token)
   }
 
   
