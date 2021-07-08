@@ -36,7 +36,6 @@ const routes: Routes = [
 
   {path: 'postagens-delet/:id', component: PostagensDeletComponent}
 
-
 ];
 
 @NgModule({
