@@ -8,5 +8,5 @@ export class User {
     public foto: string
     public serie: number
     public instrutor: boolean
-    public postagem: Postagem[]
+    public postagens: Postagem[]
 }
