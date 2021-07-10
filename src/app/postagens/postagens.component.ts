@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagensService } from '../service/postagens.service';
 import { TemaService } from '../service/tema.service';
@@ -35,7 +36,8 @@ export class PostagensComponent implements OnInit {
     public auth: AuthService,
     public router: Router,
     private postagemService: PostagensService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -43,6 +45,7 @@ export class PostagensComponent implements OnInit {
 
     if (environment.token == '') {
       this.router.navigate(['/sobrenos'])
+      this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
 
     if (environment.serie == 0) {
@@ -126,7 +129,7 @@ export class PostagensComponent implements OnInit {
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
 
-      alert('Sua postagem foi enviada!')
+      this.alertas.showAlertSuccess('Postagem enviada!')
 
       this.postagem = new Postagem()
       this.getAllPostagens()
