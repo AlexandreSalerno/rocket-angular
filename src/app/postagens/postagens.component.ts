@@ -18,6 +18,7 @@ export class PostagensComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -117,6 +118,16 @@ export class PostagensComponent implements OnInit {
     } else {
       this.postagemService.getByTemaId(number).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=> {
+        this.listaPostagens=resp
       })
     }
   }
