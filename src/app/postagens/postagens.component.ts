@@ -30,6 +30,9 @@ export class PostagensComponent implements OnInit {
 
   serie = environment.serie
 
+  key = 'data'
+  reverse = true
+
 
   constructor(
 
