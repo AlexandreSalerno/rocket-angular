@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
   nome: string = environment.nome
   foto: string = environment.foto
   serie: number = environment.serie
+  
+  id = environment.id
 
   isInstruitor: boolean = environment.instrutor
 
