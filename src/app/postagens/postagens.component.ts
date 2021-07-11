@@ -60,7 +60,7 @@ export class PostagensComponent implements OnInit {
       this.getTemaBySerie(this.serie)
       this.findBySeriePostagem(this.serie)
     }
-    this.findByIdUser()
+    this.findByIdUser(this.idUser)
     this.temaService.refreshToken()
   }
 
@@ -83,8 +83,8 @@ export class PostagensComponent implements OnInit {
     })
   }
 
-  findByIdUser() {
-    this.postagemService.getByIdUser(this.idUser).subscribe((resp: User) => {
+  findByIdUser(id:number) {
+    this.postagemService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
     })
   }

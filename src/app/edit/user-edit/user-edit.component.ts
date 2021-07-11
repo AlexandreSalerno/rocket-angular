@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Postagem } from 'src/app/model/Postagem';
 import { User } from 'src/app/model/User';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
@@ -14,6 +15,7 @@ import { environment } from 'src/environments/environment.prod';
 export class UserEditComponent implements OnInit {
 
   user: User = new User()
+  todasPostagens:Postagem[]
   idUser: number
   confirmarSenha: string
   tipoUsuario: boolean
@@ -53,8 +55,15 @@ export class UserEditComponent implements OnInit {
     this.tipoUsuario = event.target.checked
   }
 
+  findAllPostagens(id:number){
+    this.postagemService.getByUsuarioId(id).subscribe((resp: Postagem[]) =>{
+      this.todasPostagens = resp
+    })
+  }
+
   atualizar() {
     this.user.instrutor = this.tipoUsuario
+    this.user.postagens = this.todasPostagens
 
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('Confirme a senha!')

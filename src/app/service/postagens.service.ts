@@ -65,5 +65,9 @@ export class PostagensService {
   getBySerieNumber(id:number):Observable<Postagem[]>{
     return this.http.get<Postagem[]>(`${environment.uri}/postagens/serie/${id}`, this.token)
   }
+
+  getByUsuarioId(id:number):Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens/usuario/${id}`, this.token)
+  }
   
 }
