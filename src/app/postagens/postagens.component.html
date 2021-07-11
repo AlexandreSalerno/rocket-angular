@@ -4,7 +4,7 @@
     <div class="row px-5 mt-5">
         <div class="col-md-12">
 
-  
+
             <div class="row d-flex justify-content-center">
 
                 <div class="col-md-12 ic-menu d-flex justify-content-center ">
@@ -12,13 +12,14 @@
                     <div class="btn-group-vertical">
                         <div class="p-2">
                             <button type="button" class="menu-button btn bt-ed-2"
-                            (click)='findPostagensByTemaId($event)' value="0">TODAS</button>
+                                (click)='findPostagensByTemaId($event)' value="0">TODAS</button>
                         </div>
                         <div *ngFor='let item of listaTemas' class="p-2">
                             <button type="button" class="menu-button btn bt-ed-{{(item.id%3+1)}}"
-                            (click)='findPostagensByTemaId($event)' value="{{item.id}}">{{item.nome}} {{item.serie}}</button>
+                                (click)='findPostagensByTemaId($event)' value="{{item.id}}">{{item.nome}}
+                                {{item.serie}}</button>
                         </div>
-                    
+
                         <!--<div class="p-2">
                             <button type="button" class="menu-button btn bt-ed-3">HISTÓRIA</button>
                         </div>
@@ -50,9 +51,9 @@
                     <p>Para realizar uma nova postagem...</p>
                     <!-- botão do modal -->
                     <button class="btn btn-efeito3 br-32" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    data-bs-whatever="@mdo">Clique aqui!</button>
+                        data-bs-whatever="@mdo">Clique aqui!</button>
                 </div>
-               
+
 
                 <!-- <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
                 <form>
@@ -106,7 +107,9 @@
                     <div class="row row d-flex justify-content-center mt-4 mb-4">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="tituloPostagem" placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost" (keyup)='findByTituloPostagem()'>
+                                <input type="text" class="form-control" id="tituloPostagem"
+                                    placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost"
+                                    (keyup)='findByTituloPostagem()'>
                             </div>
                         </div>
                     </div>
@@ -115,8 +118,8 @@
 
                     <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
-                            <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
-                                width="55px">
+                            <img id="foto-todasPostagens" class="rounded-circle foto-usuario"
+                                src="{{item.usuario.foto}}" alt="foto" width="55px">
                             <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
                             <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
@@ -130,7 +133,7 @@
                     </div>
 
                 </div>
-            
+
                 <!-- /TODAS POSTAGENS -->
 
                 <!-- MINHAS POSTAGENS -->
@@ -139,11 +142,8 @@
                     aria-labelledby="nav-minhasPostagens-tab">
 
                     <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-                        
-                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
 
-                            <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
-                                width="55px">
+                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
 
                             <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
@@ -188,8 +188,8 @@
                 <form>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Título:</label>
-                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control br-32" id="titulo" name="titulo"
-                            aria-describedby="text">
+                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control br-32" id="titulo"
+                            name="titulo" aria-describedby="text">
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Matéria:</label>
@@ -201,7 +201,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Conteudo:</label>
-                        <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3" class="form-control br-32"></textarea>
+                        <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3"
+                            class="form-control br-32"></textarea>
                     </div>
                 </form>
             </div>
