@@ -1,5 +1,6 @@
 <div class="cotainer d-flex justify-content-center principal" id="img-bg-interior">
     <!-- MENU -->
+
     <div class="row px-5 mt-5">
         <div class="col-md-12">
 
@@ -39,11 +40,21 @@
     <!-- /MENU -->
 
     <!-- POSTAGENS -->
+
     <!-- NOVA POSTAGENS -->
     <div class="row mt-5">
         <div class="col-md-11">
-            <div class="row ic-menu d-flex justify-content-center py-3">
-                <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
+            <div class="row ic-menu br-32 d-flex justify-content-center py-3">
+
+                <div class="d-flex py-3 align-items-center justify-content-between txt-titulo">
+                    <p>Para realizar uma nova postagem...</p>
+                    <!-- botão do modal -->
+                    <button class="btn btn-efeito3 br-32" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@mdo">Clique aqui!</button>
+                </div>
+               
+
+                <!-- <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
                 <form>
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Título</label>
@@ -57,7 +68,6 @@
                             <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
                                 {{item.nome}} {{item.serie}}
                             </option>
-                            <!-- TEMAS -->
                         </select>
                     </div>
                     <div class="mb-3">
@@ -67,8 +77,8 @@
                     </div>
                     <div class="div d-flex justify-content-end">
                         <button type="submit" class="btn btn-success me-5" (click)="publicar()">Enviar!</button>
-                    </div>
-                </form>
+                    </div> 
+                </form>-->
             </div>
             <!-- /NOVA POSTAGENS -->
 
@@ -131,6 +141,10 @@
                     <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
                         
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+
+                            <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
+                                width="55px">
+
                             <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
                         <div class="mb-2">
@@ -152,6 +166,49 @@
                 <!-- /MINHAS POSTAGENS -->
             </div>
             <!--/POSTAGENS -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ic-menu">
+            <div class="modal-header">
+                <h5 class="modal-title text-center text-dark" id="exampleModalLabel">Nova Postagem</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Título:</label>
+                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control br-32" id="titulo" name="titulo"
+                            aria-describedby="text">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Matéria:</label>
+                        <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select br-32"
+                            (change)="findByIdTema()">
+                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">{{item.nome}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Conteudo:</label>
+                        <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3" class="form-control br-32"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-efeito3 br-32" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-efeito2 br-32 me-5" (click)="publicar()">Postar!</button>
+            </div>
         </div>
     </div>
 </div>

@@ -30,6 +30,11 @@ hr{
     background-color: rgba(71, 68, 68, 0.71)!important;    
 }
 
+.ic-menu3{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(71, 68, 68, 0.71)!important;    
+}
+
 
 
 #foto-usuario{
@@ -128,4 +133,59 @@ p{
 
 #texto{
     resize: none;
+}
+
+.br-32 {
+    border-radius: 32px;
+}
+
+.btn-efeito{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.37);;
+
+    border-radius: 32px;
+    border: 1px solid white;
+}
+.btn-efeito:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
+.txt-titulo{
+    color: black;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.btn-efeito2{
+    color: white;
+    background-color: #0D6E99;;
+
+    border-radius: 32px;
+    border: 1px solid white;
+}
+.btn-efeito2:hover{
+    color: rgb(2, 0, 34);
+    background-color: #69CDFF;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
+.btn-efeito3{
+    color: white;
+    background-color:gray;
+
+    border-radius: 32px;
+    border: 1px solid white;
+}
+.btn-efeito3:hover{
+    color: rgb(2, 0, 34);
+    background-color: rgb(92, 91, 91);
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
 }
