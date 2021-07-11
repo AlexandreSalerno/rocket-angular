@@ -91,6 +91,18 @@
                 <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
                     aria-labelledby="nav-todasPostagens-tab">
 
+
+                    <!--Input de pesquisa por título-->
+                    <div class="row row d-flex justify-content-center mt-4 mb-4">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="tituloPostagem" placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost" (keyup)='findByTituloPostagem()'>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Input-->
+
+
                     <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
                             <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
