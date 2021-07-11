@@ -34,12 +34,12 @@
                             Opções
                         </a>
                         <ul class="dropdown-menu mt-2" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Editar conta</a></li>
+                            <li><a [routerLink]="['/user-edit',id]" class="dropdown-item" href="#">Editar conta</a></li>
                             <li><a (click)="sair()" class="dropdown-item">Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item"routerLink="/sobrenos">Quem somos?</a></li>
+                            <li><a class="dropdown-item"routerLink=""></a></li>
                         </ul>
                     </li>
                 </ul>
