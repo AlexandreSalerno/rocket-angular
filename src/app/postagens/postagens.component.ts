@@ -20,6 +20,7 @@ export class PostagensComponent implements OnInit {
   listaPostagens: Postagem[]
   tituloPost: string
 
+
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
@@ -52,13 +53,14 @@ export class PostagensComponent implements OnInit {
       this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
 
-    if (environment.serie == 0) {
+    if (environment.instrutor == true) {
       this.getAllTemas()
+      this.getAllPostagens()
     } else {
       this.getTemaBySerie(this.serie)
+      this.findBySeriePostagem(this.serie)
     }
     this.findByIdUser()
-    this.getAllPostagens()
     this.temaService.refreshToken()
   }
 
@@ -99,22 +101,14 @@ export class PostagensComponent implements OnInit {
     })
   }
 
-  getPostagensByTema(event: any) {
-    let number = event.target.value
-    if (number == 0) {
-      this.getAllPostagens()
-    } else {
-      this.getTemaByID(number)
-      this.listaPostagens = this.filtroTema.postagens
-      console.log(this.listaPostagens)
-    }
-
-  }
-
   findPostagensByTemaId(event: any) {
     let number = event.target.value
     if (number == 0) {
-      this.getAllPostagens()
+      if (environment.instrutor == true) {
+        this.getAllPostagens()
+      } else {
+        this.findBySeriePostagem(this.serie)
+      }
     } else {
       this.postagemService.getByTemaId(number).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
@@ -122,14 +116,30 @@ export class PostagensComponent implements OnInit {
     }
   }
 
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
-      this.getAllPostagens()
-    }else{
-      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=> {
-        this.listaPostagens=resp
-      })
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      if (environment.instrutor == true) {
+        this.getAllPostagens()
+      } else {
+        this.findBySeriePostagem(this.serie)
+      }
+    } else {
+      if (environment.instrutor == true) {
+        this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp
+        })
+      } else {
+        this.postagemService.getByTituloAndSeriePostagem(this.tituloPost, this.serie).subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp
+        })
+      }
     }
+  }
+
+  findBySeriePostagem(serie: number) {
+    this.postagemService.getBySerieNumber(serie).subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
   }
 
   publicar() {
