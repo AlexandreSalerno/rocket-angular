@@ -21,21 +21,53 @@ hr{
     border-radius: 15px 15px;
     background-color: rgba(255, 255, 255, 0.71)!important;    
 }
-.ic-menu2{
+
+.ic-menu-1{
     border-radius: 15px 15px 0 0;
-    background-color: rgba(71, 68, 68, 0.71)!important;    
+    background-color: rgba(13, 110, 153, 0.71)!important;    
 }
+.ic-menu-2{
+    border-radius: 15px 15px 0 0;
+    background-color: rgba(254 , 55, 69, 0.71)!important;    
+}
+.ic-menu-3{
+    border-radius: 15px 15px 0 0;
+    background-color: rgba(255, 208, 13, 0.71)!important;    
+}
+.ic-menu-4{
+    border-radius: 15px 15px 0 0;
+    background-color: rgba(255, 149, 24, 0.71)!important;    
+}
+.ic-menu-5{
+    border-radius: 15px 15px 0 0;
+    background-color: rgba(105, 205, 255, 0.71)!important;    
+}
+
+.ic-menu2-1{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(13, 110, 153, 0.71)!important;    
+}
+.ic-menu2-2{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(254 , 55, 69, 0.71)!important;    
+}
+.ic-menu2-3{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(255, 208, 13, 0.71)
+}
+.ic-menu2-4{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(255, 149, 24, 0.71)!important;    
+}
+.ic-menu2-5{
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(105, 205, 255, 0.71)!important;    
+}
+
 .ic-menu3{
     border-radius: 0 0 15px 15px;
     background-color: rgba(71, 68, 68, 0.71)!important;    
 }
-
-.ic-menu3{
-    border-radius: 0 0 15px 15px;
-    background-color: rgba(71, 68, 68, 0.71)!important;    
-}
-
-
 
 .foto-usuario{
     border: 4px solid rgba(255, 255, 255, 0.459);
@@ -185,6 +217,22 @@ p{
 .btn-efeito3:hover{
     color: rgb(2, 0, 34);
     background-color: rgb(92, 91, 91);
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
+
+.btn-efeito-todos{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.911);;
+
+    border-radius: 32px;
+    border: 1px solid rgb(0, 0, 0);
+}
+.btn-efeito-todos:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
 
     -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
     box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);

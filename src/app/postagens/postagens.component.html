@@ -11,11 +11,11 @@
 
                     <div class="btn-group-vertical">
                         <div class="p-2">
-                            <button type="button" class="menu-button btn bt-ed-2"
+                            <button type="button" class="menu-button btn btn-efeito-todos"
                                 (click)='findPostagensByTemaId($event)' value="0">TODAS</button>
                         </div>
                         <div *ngFor='let item of listaTemas' class="p-2">
-                            <button type="button" class="menu-button btn bt-ed-{{(item.id%3+1)}}"
+                            <button type="button" class="menu-button btn bt-ed-{{(item.id%5)+1}}"
                                 (click)='findPostagensByTemaId($event)' value="{{item.id}}">{{item.nome}}
                                 {{item.serie}}</button>
                         </div>
@@ -117,11 +117,11 @@
 
 
                     <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
                             <img id="foto-todasPostagens" class="rounded-circle foto-usuario"
                                 src="{{item.usuario.foto}}" alt="foto" width="55px">
                             <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
-                            <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
+                            <p class="text-white fs-5 me-1">{{item.tema.nome}} {{item.tema.serie}}</p>
                         </div>
                         <div class="mb-2">
                             <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
@@ -143,7 +143,7 @@
 
                     <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
 
-                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+                        <div class="d-flex py-3 align-items-center justify-content-between ic-menu-{{(item.tema.id%5)+1}}">
 
                             <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
@@ -154,7 +154,7 @@
                             <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
                                     'HH:mm'}}</small></p>
                         </div>
-                        <div class="d-flex justify-content-around ic-menu3">
+                        <div class="d-flex justify-content-around ic-menu2-{{(item.tema.id%5)+1}}">
                             <button class="btn btn-info my-2 px-3"
                                 [routerLink]="['/postagens-edit', item.id]">Editar</button>
                             <button class="btn btn-danger my-2 px-3"
@@ -195,7 +195,7 @@
                         <label for="recipient-name" class="col-form-label">Matéria:</label>
                         <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select br-32"
                             (change)="findByIdTema()">
-                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">{{item.nome}}
+                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">{{item.nome}} {{item.serie}}ª
                             </option>
                         </select>
                     </div>
@@ -208,7 +208,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-efeito3 br-32" data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-efeito2 br-32 me-5" (click)="publicar()">Postar!</button>
+                <button type="submit" class="btn btn-efeito2 br-32 me-5" data-bs-dismiss="modal" (click)="publicar()">Postar!</button>
             </div>
         </div>
     </div>

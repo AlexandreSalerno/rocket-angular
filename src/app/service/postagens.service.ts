@@ -25,7 +25,6 @@ export class PostagensService {
   }
 
 
-  
   getAllPostagens(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>(`${environment.uri}/postagens`, this.token)
   }
@@ -36,6 +35,10 @@ export class PostagensService {
 
   getByTituloPostagem(titulo: string): Observable<Postagem[]>{
     return this.http.get<Postagem[]>(`${environment.uri}/postagens/titulo/${titulo}`, this.token)
+  }
+
+  getByTituloAndSeriePostagem(titulo: string, serie:number): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens/titulo/${titulo}/${serie}`, this.token)
   }
 
 
@@ -51,8 +54,6 @@ export class PostagensService {
     return this.http.delete(`${environment.uri}/postagens/delete/${id}`, this.token)
   }
 
-  
-
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`${environment.uri}/usuarios/${id}`, this.token)
   }
@@ -61,5 +62,8 @@ export class PostagensService {
     return this.http.get<Postagem[]>(`${environment.uri}/postagens/tema/${id}`, this.token)
   }
 
+  getBySerieNumber(id:number):Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens/serie/${id}`, this.token)
+  }
   
 }

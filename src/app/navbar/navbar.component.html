@@ -20,7 +20,7 @@
                             alt="foto">
                     </li>
                     <li class="nav-item ps-2">
-                        <p class="m-0 fs-16">{{nome}}: {{serie}} Série</p>
+                        <p class="m-0 fs-16">{{nome}}<small *ngIf='!(isInstruitor)'>:{{serie}}ª</small></p>
                     </li>
                 </ul>
                 <!-- TEMPORARIO -->
