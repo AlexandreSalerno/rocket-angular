@@ -33,10 +33,13 @@ export class UserEditComponent implements OnInit {
       this.router.navigate(['/sobrenos'])
       this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
+
+    this.idUser = this.route.snapshot.params['id']
+    this.findByIdUser(this.idUser)
   }
 
   findByIdUser(id: number) {
-    this.postagemService.getByIdUser(id).subscribe((resp: User) => {
+    this.postagemService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
