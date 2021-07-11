@@ -9,10 +9,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class NavbarComponent implements OnInit {
 
-  nome:string=environment.nome
-  foto:string=environment.foto
+  nome: string = environment.nome
+  foto: string = environment.foto
+  serie: number = environment.serie
 
-  isInstruitor:boolean = environment.instrutor
+  isInstruitor: boolean = environment.instrutor
 
   constructor(
     private router: Router
@@ -20,17 +21,17 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
   }
 
   sair() {
     this.router.navigate(["/sobrenos"])
-    environment.id=0
-    environment.nome=''
-    environment.token=''
-    environment.foto=''
-    environment.instrutor=false
+    environment.id = 0
+    environment.nome = ''
+    environment.token = ''
+    environment.foto = ''
+    environment.instrutor = false
   }
 
 }

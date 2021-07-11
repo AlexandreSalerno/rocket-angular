@@ -4,19 +4,22 @@
     <div class="row px-5 mt-5">
         <div class="col-md-12">
 
+  
             <div class="row d-flex justify-content-center">
 
-                <div class="col-md-12 ic-menu d-flex justify-content-center">
+                <div class="col-md-12 ic-menu d-flex justify-content-center ">
 
                     <div class="btn-group-vertical">
-
-                        <div class="pt-5 p-2">
-                            <button type="button" class="menu-button btn bt-ed-1">MATEMÁTICA</button>
-                        </div>
                         <div class="p-2">
-                            <button type="button" class="menu-button btn bt-ed-2">PORTUGUÊS</button>
+                            <button type="button" class="menu-button btn bt-ed-2"
+                            (click)='findPostagensByTemaId($event)' value="0">TODAS</button>
                         </div>
-                        <div class="p-2">
+                        <div *ngFor='let item of listaTemas' class="p-2">
+                            <button type="button" class="menu-button btn bt-ed-{{(item.id%3+1)}}"
+                            (click)='findPostagensByTemaId($event)' value="{{item.id}}">{{item.nome}} {{item.serie}}</button>
+                        </div>
+                    
+                        <!--<div class="p-2">
                             <button type="button" class="menu-button btn bt-ed-3">HISTÓRIA</button>
                         </div>
                         <div class="p-2">
@@ -24,7 +27,7 @@
                         </div>
                         <div class="p-2 pb-5">
                             <button type="button" class="menu-button btn bt-ed-5">CIÊNCIAS</button>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -63,7 +66,7 @@
                         <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select"
                             (change)="findByIdTema()">
                             <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
-                                {{item.nome}}
+                                {{item.nome}} {{item.serie}}
                             </option>
                         </select>
                     </div>
@@ -98,7 +101,19 @@
                 <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
                     aria-labelledby="nav-todasPostagens-tab">
 
-                    <div *ngFor="let item of listaPostagens" class="row mt-2 ic-menu">
+
+                    <!--Input de pesquisa por título-->
+                    <div class="row row d-flex justify-content-center mt-4 mb-4">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="tituloPostagem" placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost" (keyup)='findByTituloPostagem()'>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Input-->
+
+
+                    <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
                             <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
                                 width="55px">
@@ -115,6 +130,7 @@
                     </div>
 
                 </div>
+            
                 <!-- /TODAS POSTAGENS -->
 
                 <!-- MINHAS POSTAGENS -->
@@ -122,10 +138,13 @@
                 <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel"
                     aria-labelledby="nav-minhasPostagens-tab">
 
-                    <div *ngFor="let item of listaPostagens" class="row mt-2 ic-menu">
+                    <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
+                        
                         <div class="d-flex py-3 align-items-center justify-content-between  ic-menu2">
+
                             <img id="foto-usuario" class="rounded-circle" src="{{item.usuario.foto}}" alt="foto"
                                 width="55px">
+
                             <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                         </div>
                         <div class="mb-2">

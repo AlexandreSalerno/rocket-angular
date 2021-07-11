@@ -34,9 +34,12 @@ export class PostagensService {
     return this.http.get<Postagem>(`${environment.uri}/postagens/id/${id}`, this.token)
   }
 
+  getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens/titulo/${titulo}`, this.token)
+  }
+
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    console.log(this.token)
     return this.http.post<Postagem>(`${environment.uri}/postagens`, postagem, this.token)
   }
 
@@ -52,6 +55,10 @@ export class PostagensService {
 
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`${environment.uri}/usuarios/${id}`, this.token)
+  }
+
+  getByTemaId(id:number):Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`${environment.uri}/postagens/tema/${id}`, this.token)
   }
 
   
