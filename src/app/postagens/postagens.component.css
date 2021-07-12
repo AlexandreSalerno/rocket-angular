@@ -237,3 +237,7 @@ p{
     -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
     box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
 }
+
+.largura-abas-postagens {
+    min-width: 60rem;
+}

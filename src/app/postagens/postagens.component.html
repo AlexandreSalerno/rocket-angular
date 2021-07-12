@@ -44,130 +44,136 @@
 
     <!-- NOVA POSTAGENS -->
     <div class="row mt-5">
-        <div class="col-md-11">
+        <div class="col-md-12">
             <div class="row ic-menu br-32 d-flex justify-content-center py-3">
-
-                <div class="d-flex py-3 align-items-center justify-content-between txt-titulo">
-                    <p>Para realizar uma nova postagem...</p>
-                    <!-- botão do modal -->
-                    <button class="btn btn-efeito3 br-32" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">Clique aqui!</button>
-                </div>
-
-
-                <!-- <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
-                <form>
-                    <div class="mb-3">
-                        <label for="titulo" class="form-label">Título</label>
-                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" name="titulo"
-                            aria-describedby="text">
+                <div class="col-md-12">
+                    <div class="d-flex py-3 align-items-center justify-content-between txt-titulo">
+                        <p>Para realizar uma nova postagem...</p>
+                        <!-- botão do modal -->
+                        <button class="btn btn-efeito3 br-32" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            data-bs-whatever="@mdo">Clique aqui!</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="tema" class="form-label">Escolha um tema:</label>
-                        <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select"
-                            (change)="findByIdTema()">
-                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
-                                {{item.nome}} {{item.serie}}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="conteudo" class="form-label">Conteudo da Postagem</label>
-                        <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3"
-                            class="form-control"></textarea>
-                    </div>
-                    <div class="div d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success me-5" (click)="publicar()">Enviar!</button>
-                    </div> 
-                </form>-->
+    
+    
+                    <!-- <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
+                    <form>
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título</label>
+                            <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" name="titulo"
+                                aria-describedby="text">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tema" class="form-label">Escolha um tema:</label>
+                            <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select"
+                                (change)="findByIdTema()">
+                                <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
+                                    {{item.nome}} {{item.serie}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="conteudo" class="form-label">Conteudo da Postagem</label>
+                            <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="div d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success me-5" (click)="publicar()">Enviar!</button>
+                        </div> 
+                    </form>-->
+                </div>         
             </div>
-            <!-- /NOVA POSTAGENS -->
-
-            <!-- NAV-POSTAGENS -->
-            <nav>
-                <div class="nav nav-tabs d-flex justify-content-start mt-3" id="nav-tab" role="tablist">
-                    <button class="nav-link active text-dark fw-bold" id="nav-todasPostagens-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
-                        aria-selected="true">Todas as Postagens</button>
-
-                    <button class="nav-link text-dark fw-bold" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-minhasPostagens" type="button" role="tab"
-                        aria-controls="nav-minhasPostagens" aria-selected="false" (click)='findByIdUser(idUser)' >Minhas Postagens</button>
-                </div>
-            </nav>
-            <!-- /NAV-POSTAGENS -->
-
-            <div class="tab-content" id="nav-tabContent">
-                <!-- TODAS AS POSTAGENS -->
-                <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
-                    aria-labelledby="nav-todasPostagens-tab">
-
-
-                    <!--Input de pesquisa por título-->
-                    <div class="row row d-flex justify-content-center mt-4 mb-4">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="tituloPostagem"
-                                    placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost"
-                                    (keyup)='findByTituloPostagem()'>
+            <div class="row mt-2 overflow-auto" style="max-height: 70vh;">
+                <div class="col-md-11">    
+                    <!-- /NOVA POSTAGENS -->
+        
+                    <!-- NAV-POSTAGENS -->
+                    <nav>
+                        <div class="nav nav-tabs d-flex justify-content-start largura-abas-postagens mt-3" id="nav-tab" role="tablist">
+                            <button class="nav-link active text-dark fw-bold btn-efeito" id="nav-todasPostagens-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
+                                aria-selected="true">Todas as Postagens</button>
+        
+                            <button class="nav-link text-dark fw-bold btn-efeito" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-minhasPostagens" type="button" role="tab"
+                                aria-controls="nav-minhasPostagens" aria-selected="false" (click)='findByIdUser(idUser)' >Minhas Postagens</button>
+                        </div>
+                    </nav>
+                    <!-- /NAV-POSTAGENS -->
+        
+                    <div class="tab-content" id="nav-tabContent">
+                        <!-- TODAS AS POSTAGENS -->
+                        <div class="tab-pane fade show active largura-abas-postagens me-3" id="nav-todasPostagens" role="tabpanel"
+                            aria-labelledby="nav-todasPostagens-tab">
+        
+        
+                            <!--Input de pesquisa por título-->
+                            <div class="row row d-flex justify-content-center mt-4 mb-4">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="tituloPostagem"
+                                            placeholder="Procure pelo título da postagem" [(ngModel)]="tituloPost"
+                                            (keyup)='findByTituloPostagem()'>
+                                    </div>
+                                </div>
                             </div>
+                            <!--/Input-->
+        
+        
+                            <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
+                                <div class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
+                                    <img id="foto-todasPostagens" class="rounded-circle foto-usuario"
+                                        src="{{item.usuario.foto}}" alt="foto" width="55px">
+                                    <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
+                                    <p class="text-white fs-5 me-1">{{item.tema.nome}} {{item.tema.serie}}</p>
+                                </div>
+                                <div class="mb-2">
+                                    <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
+                                    <p class="fs-3">{{item.conteudo}}</p>
+                                    <hr>
+                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
+                                            'HH:mm'}}</small></p>
+                                </div>
+                            </div>
+        
                         </div>
+        
+                        <!-- /TODAS POSTAGENS -->
+        
+                        <!-- MINHAS POSTAGENS -->
+        
+                        <div class="tab-pane fade largura-abas-postagens me-3" id="nav-minhasPostagens" role="tabpanel"
+                            aria-labelledby="nav-minhasPostagens-tab">
+        
+                            <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
+        
+                                <div class="d-flex py-3 align-items-center justify-content-between ic-menu-{{(item.tema.id%5)+1}}">
+        
+                                    <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
+                                </div>
+                                <div class="mb-2">
+                                    <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
+                                    <p class="fs-3">{{item.conteudo}}</p>
+                                    <hr>
+                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
+                                            'HH:mm'}}</small></p>
+                                </div>
+                                <div class="d-flex justify-content-around ic-menu2-{{(item.tema.id%5)+1}}">
+                                    <button class="btn btn-info my-2 px-3"
+                                        [routerLink]="['/postagens-edit', item.id]">Editar</button>
+                                    <button class="btn btn-danger my-2 px-3"
+                                        [routerLink]="['/postagens-delet', item.id]">Apagar</button>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /MINHAS POSTAGENS -->
                     </div>
-                    <!--/Input-->
-
-
-                    <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-                        <div class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
-                            <img id="foto-todasPostagens" class="rounded-circle foto-usuario"
-                                src="{{item.usuario.foto}}" alt="foto" width="55px">
-                            <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
-                            <p class="text-white fs-5 me-1">{{item.tema.nome}} {{item.tema.serie}}</p>
-                        </div>
-                        <div class="mb-2">
-                            <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
-                            <p class="fs-3">{{item.conteudo}}</p>
-                            <hr>
-                            <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
-                                    'HH:mm'}}</small></p>
-                        </div>
-                    </div>
-
+                    <!--/POSTAGENS -->
                 </div>
-
-                <!-- /TODAS POSTAGENS -->
-
-                <!-- MINHAS POSTAGENS -->
-
-                <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel"
-                    aria-labelledby="nav-minhasPostagens-tab">
-
-                    <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-
-                        <div class="d-flex py-3 align-items-center justify-content-between ic-menu-{{(item.tema.id%5)+1}}">
-
-                            <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
-                        </div>
-                        <div class="mb-2">
-                            <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
-                            <p class="fs-3">{{item.conteudo}}</p>
-                            <hr>
-                            <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
-                                    'HH:mm'}}</small></p>
-                        </div>
-                        <div class="d-flex justify-content-around ic-menu2-{{(item.tema.id%5)+1}}">
-                            <button class="btn btn-info my-2 px-3"
-                                [routerLink]="['/postagens-edit', item.id]">Editar</button>
-                            <button class="btn btn-danger my-2 px-3"
-                                [routerLink]="['/postagens-delet', item.id]">Apagar</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /MINHAS POSTAGENS -->
             </div>
-            <!--/POSTAGENS -->
         </div>
     </div>
+    
 </div>
 
 
