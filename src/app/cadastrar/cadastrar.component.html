@@ -7,7 +7,8 @@
 
                     <div class="form-group">
                         <label class="pb-1 fs-5" for="usuario">Nome completo</label>
-                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="nomeCompleto" id="nomeCompleto" placeholder="">
+                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="nomeCompleto"
+                            id="nomeCompleto" placeholder="">
                     </div>
                     <div class="form-check mt-3">
                         <input class="form-check-input" (change)=tipoUser($event) type="checkbox" id="instrutor">
@@ -15,28 +16,43 @@
                     </div>
                     <div class="form-group pt-2">
                         <label class="pb-1 fs-5" for="email">E-mail</label>
-                        <input [(ngModel)]='user.email' class="form-control" type="text" name="email" id="email" placeholder="">
+                        <input [(ngModel)]='user.email' class="form-control" type="text" name="email" id="email"
+                            placeholder="">
                     </div>
                     <div class="form-group pt-2">
                         <label class="pb-1 fs-5" for="foto">Link da foto</label>
-                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="">
+                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
+                            placeholder="">
                     </div>
+                    
                     <div *ngIf='!tipoUsuario' class="form-group pt-2">
                         <label class="pb-1 fs-5" for="serie">Série</label>
-                        <input [(ngModel)]='user.serie' class="form-control" type="text" name="serie" id="serie" placeholder="">
+                        <select name="serie" id="serie" class="form-select br-32 bg-light"
+                            (change)="selectSerie($event)">
+                            <option value="1">1ª</option>
+                            <option value="2">2ª</option>
+                            <option value="3">3ª</option>
+                            <option value="4">4ª</option>
+                            <option value="5">5ª</option>
+                        </select>
                     </div>
+
                     <div class="form-group pt-2">
                         <label class="pb-1 fs-5" for="senha">Senha</label>
-                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="">
+                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha"
+                            id="senha" placeholder="">
                     </div>
                     <div class="form-group pt-2">
                         <label class="pb-1 fs-5" for="confirmsenha">Confirmar Senha</label>
-                        <input [(ngModel)]='user.senha' class="form-control" type="password" name="senha" id="confirmSenha" placeholder="">
+                        <input [(ngModel)]='user.senha' class="form-control" type="password" name="senha"
+                            id="confirmSenha" placeholder="">
                     </div>
 
                     <div class="d-flex justify-content-center p-3 mt-3">
-                        <button class="btn btn-success btn-efeito-cad fs-5 me-5"(click)='cadastrar()' type="submit">Cadastrar</button>
-                        <button class="btn btn-danger btn-efeito-canc fs-5 ms-5" type="submit" routerLink="/entrar" >Cancelar</button>
+                        <button class="btn btn-success btn-efeito-cad fs-5 me-5" (click)='cadastrar()'
+                            type="submit">Cadastrar</button>
+                        <button class="btn btn-danger btn-efeito-canc fs-5 ms-5" type="submit"
+                            routerLink="/entrar">Cancelar</button>
                     </div>
                 </div>
             </div>

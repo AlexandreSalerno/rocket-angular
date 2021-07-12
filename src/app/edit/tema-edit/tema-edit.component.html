@@ -10,16 +10,16 @@
                 <div class="row d-flex justify-content-center mt-4 mb-5 align-items-center">
                    <div class="col-md-5">
                         <div class="form-group">
-                                <h3 class="fs-subtitulo">Editar nome da matéria:</h3>
+                                <h3 class="fs-subtitulo text-center text-dark fs-5">Editar nome da matéria</h3>
                                 <input [(ngModel)]='tema.nome' type="text" class="form-control br-32" id="descricao"
                                 placeholder="Digite o novo nome da matéria">
                         </div>
                    </div>
                    
     
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="form-group">
-                            <h3 class="fs-subtitulo">Editar série:</h3>
+                            <h3 class="fs-subtitulo text-center text-dark fs-5">Editar série</h3>
                             <select name="serie" id="serie" class="form-select br-32" (change)='numeroSerie($event)'>
                                 <!-- EXEMPLO SELECTED -->
                                 <option [selected]="tema.serie == 1" value="1">1</option>
