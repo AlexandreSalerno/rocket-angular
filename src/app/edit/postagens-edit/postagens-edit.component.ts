@@ -39,7 +39,12 @@ export class PostagensEditComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
-    this.findAllTemas()
+    
+    if(environment.instrutor == true) {
+      this.findAllTemas()
+    }else{
+      this.getTemaBySerie(environment.serie)
+    }
   }
 
   findByIdPostagem(id : number){
@@ -59,6 +64,12 @@ export class PostagensEditComponent implements OnInit {
 
   findAllTemas (){
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
+
+  getTemaBySerie(serie: number) {
+    this.temaService.getBySerie(serie).subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }

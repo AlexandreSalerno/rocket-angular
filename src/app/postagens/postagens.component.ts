@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Comentario } from '../model/Comentario';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { ComentarioService } from '../service/comentario.service';
 import { PostagensService } from '../service/postagens.service';
 import { TemaService } from '../service/tema.service';
 
@@ -20,6 +22,9 @@ export class PostagensComponent implements OnInit {
   listaPostagens: Postagem[]
   tituloPost: string
 
+  fotoUser = environment.foto
+
+  comentario: Comentario = new Comentario
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -32,7 +37,7 @@ export class PostagensComponent implements OnInit {
 
   serie = environment.serie
 
-  key = 'data'
+  key = 'date'
   reverse = true
 
 
@@ -42,17 +47,17 @@ export class PostagensComponent implements OnInit {
     public router: Router,
     private postagemService: PostagensService,
     private temaService: TemaService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private comentarioService: ComentarioService
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
-
     if (environment.token == '') {
       this.router.navigate(['/sobrenos'])
       this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
-
+    this.temaService.refreshToken()
     if (environment.instrutor == true) {
       this.getAllTemas()
       this.getAllPostagens()
@@ -61,7 +66,6 @@ export class PostagensComponent implements OnInit {
       this.findBySeriePostagem(this.serie)
     }
     this.findByIdUser(this.idUser)
-    this.temaService.refreshToken()
   }
 
 
@@ -83,7 +87,7 @@ export class PostagensComponent implements OnInit {
     })
   }
 
-  findByIdUser(id:number) {
+  findByIdUser(id: number) {
     this.postagemService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
     })
@@ -92,6 +96,7 @@ export class PostagensComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
+      console.log(resp)
     })
   }
 
@@ -150,6 +155,8 @@ export class PostagensComponent implements OnInit {
     this.user.serie = this.serie
     this.postagem.usuario = this.user
 
+    // this.postagem.comentario = []
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
 
@@ -157,6 +164,24 @@ export class PostagensComponent implements OnInit {
 
       this.postagem = new Postagem()
       this.getAllPostagens()
+    })
+  }
+
+  comentar(id: number) {
+    this.user.id = this.idUser
+    this.postagem.id = id
+    this.comentario.usuario = this.user
+    this.comentario.postagens = this.postagem
+
+    this.comentarioService.postComentario(this.comentario).subscribe((resp: Comentario) => {
+      this.comentario = resp
+      this.comentario = new Comentario()
+      this.postagem = new Postagem()
+      if (environment.instrutor == true) {
+        this.getAllPostagens()
+      } else {
+        this.findBySeriePostagem(this.serie)
+      }
     })
   }
 

@@ -1,5 +1,5 @@
 <div class="container-fluid" id="img-bg">
-    <div class="row d-flex align-items-center">
+    <div class="row d-flex align-items-center py-5">
         <div class="col-md-12">
             <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-4 bg-light p-5 br-32">
@@ -21,10 +21,26 @@
                         <label class="pb-1 fs-5" for="foto">Link da foto</label>
                         <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="">
                     </div>
-                    <div *ngIf='!tipoUsuario' class="form-group pt-2">
+
+                    <!-- <div *ngIf='!tipoUsuario' class="form-group pt-2">
                         <label class="pb-1 fs-5" for="serie">Série</label>
                         <input [(ngModel)]='user.serie' class="form-control" type="text" name="serie" id="serie" placeholder="">
+                    </div> -->
+
+                    <div *ngIf='!tipoUsuario' class="form-group pt-2">
+                        <label class="pb-1 fs-5" for="serie">Série</label>
+                        <select name="serie" id="serie" class="form-select br-32 bg-light"
+                            (change)="selectSerie($event)">
+                            <option value="">Série</option>
+                            <option value="1">1ª</option>
+                            <option value="2">2ª</option>
+                            <option value="3">3ª</option>
+                            <option value="4">4ª</option>
+                            <option value="5">5ª</option>
+                        </select>
                     </div>
+
+
                     <div class="form-group pt-2">
                         <label class="pb-1 fs-5" for="senha">Senha</label>
                         <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="">

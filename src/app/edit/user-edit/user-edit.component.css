@@ -47,3 +47,8 @@ input#instrutor{
     -webkit-box-shadow: 0px 0px 50px 10px rgba(194, 94, 94, 0.28); 
     box-shadow: 0px 0px 50px 10px rgba(136, 70, 70, 0.507);
 }
+
+select{
+    box-shadow: 0px 4px 19px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}

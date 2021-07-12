@@ -1,3 +1,4 @@
+import { Comentario } from "./Comentario"
 import { Tema } from "./Tema"
 import { User } from "./User"
 
@@ -9,4 +10,5 @@ export class Postagem {
     public link: string
     public tema: Tema
     public usuario: User
+    public comentario: Comentario[]
 }

@@ -1,9 +1,10 @@
-<div class="cotainer d-flex justify-content-center principal" id="img-bg-interior">
+<div class="container-fluid d-flex justify-content-center py-5" id="img-bg-interior">
     <!-- MENU -->
 
-    <div class="row px-5 mt-5">
+    <!-- OVERFLOW -->
+    <!-- <div class="row px-5 mt-5"> -->
+    <div class="row pe-5 mt-5">
         <div class="col-md-12">
-
 
             <div class="row d-flex justify-content-center">
 
@@ -19,16 +20,6 @@
                                 (click)='findPostagensByTemaId($event)' value="{{item.id}}">{{item.nome}}
                                 {{item.serie}}</button>
                         </div>
-
-                        <!--<div class="p-2">
-                            <button type="button" class="menu-button btn bt-ed-3">HISTÓRIA</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="menu-button btn bt-ed-4">GEOGRAFIA</button>
-                        </div>
-                        <div class="p-2 pb-5">
-                            <button type="button" class="menu-button btn bt-ed-5">CIÊNCIAS</button>
-                        </div> -->
 
                     </div>
 
@@ -47,65 +38,43 @@
         <div class="col-md-12">
             <div class="row ic-menu br-32 d-flex justify-content-center py-3">
                 <div class="col-md-12">
-                    <div class="d-flex py-3 align-items-center justify-content-between txt-titulo">
+                    <div class="d-flex p-0 align-items-center justify-content-between txt-titulo">
                         <p>Para realizar uma nova postagem...</p>
                         <!-- botão do modal -->
                         <button class="btn btn-efeito3 br-32" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-bs-whatever="@mdo">Clique aqui!</button>
                     </div>
-    
-    
-                    <!-- <h1 class="my-3 fs-1 fw-bold text-center">Que tal compartilhar algo que você aprendeu?</h1>
-                    <form>
-                        <div class="mb-3">
-                            <label for="titulo" class="form-label">Título</label>
-                            <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" name="titulo"
-                                aria-describedby="text">
-                        </div>
-                        <div class="mb-3">
-                            <label for="tema" class="form-label">Escolha um tema:</label>
-                            <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select"
-                                (change)="findByIdTema()">
-                                <option *ngFor="let item of listaTemas" selected value="{{item.id}}">
-                                    {{item.nome}} {{item.serie}}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="conteudo" class="form-label">Conteudo da Postagem</label>
-                            <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3"
-                                class="form-control"></textarea>
-                        </div>
-                        <div class="div d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success me-5" (click)="publicar()">Enviar!</button>
-                        </div> 
-                    </form>-->
-                </div>         
+
+                </div>
             </div>
-            <div class="row mt-2 overflow-auto" style="max-height: 70vh;">
-                <div class="col-md-11">    
+            <!-- OVERFLOW -->
+            <!-- <div class="row mt-2 overflow-auto" style="max-height: 70vh;"> -->
+            <div class="row mt-2">
+                <div class="col-md-12">
                     <!-- /NOVA POSTAGENS -->
-        
+
                     <!-- NAV-POSTAGENS -->
                     <nav>
-                        <div class="nav nav-tabs d-flex justify-content-start largura-abas-postagens mt-3" id="nav-tab" role="tablist">
-                            <button class="nav-link active text-dark fw-bold btn-efeito" id="nav-todasPostagens-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
-                                aria-selected="true">Todas as Postagens</button>
-        
-                            <button class="nav-link text-dark fw-bold btn-efeito" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-minhasPostagens" type="button" role="tab"
-                                aria-controls="nav-minhasPostagens" aria-selected="false" (click)='findByIdUser(idUser)' >Minhas Postagens</button>
+                        <div class="nav nav-tabs d-flex justify-content-start largura-abas-postagens mt-3" id="nav-tab"
+                            role="tablist">
+                            <button class="nav-link active text-dark fw-bold btn-efeito" id="nav-todasPostagens-tab"
+                                data-bs-toggle="tab" data-bs-target="#nav-todasPostagens" type="button" role="tab"
+                                aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</button>
+
+                            <button class="nav-link text-dark fw-bold btn-efeito" id="nav-minhasPostagens-tab"
+                                data-bs-toggle="tab" data-bs-target="#nav-minhasPostagens" type="button" role="tab"
+                                aria-controls="nav-minhasPostagens" aria-selected="false"
+                                (click)='findByIdUser(idUser)'>Minhas Postagens</button>
                         </div>
                     </nav>
                     <!-- /NAV-POSTAGENS -->
-        
+
                     <div class="tab-content" id="nav-tabContent">
                         <!-- TODAS AS POSTAGENS -->
-                        <div class="tab-pane fade show active largura-abas-postagens me-3" id="nav-todasPostagens" role="tabpanel"
-                            aria-labelledby="nav-todasPostagens-tab">
-        
-        
+                        <div class="tab-pane fade show active largura-abas-postagens me-3" id="nav-todasPostagens"
+                            role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+
+
                             <!--Input de pesquisa por título-->
                             <div class="row row d-flex justify-content-center mt-4 mb-4">
                                 <div class="col-md-5">
@@ -117,15 +86,28 @@
                                 </div>
                             </div>
                             <!--/Input-->
-        
-        
+
+
                             <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-                                <div class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
+                                <div *ngIf='!(item.usuario.instrutor)'
+                                    class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
                                     <img id="foto-todasPostagens" class="rounded-circle foto-usuario"
                                         src="{{item.usuario.foto}}" alt="foto" width="55px">
                                     <p class="text-white fs-4 fw-bold">{{item.usuario.nome}}</p>
                                     <p class="text-white fs-5 me-1">{{item.tema.nome}} {{item.tema.serie}}</p>
                                 </div>
+
+                                <div *ngIf='(item.usuario.instrutor)'
+                                    class="d-flex py-3 align-items-center justify-content-between  ic-menu-{{(item.tema.id%5)+1}}">
+                                    <div class="d-flex justify-content-center align-items-center"><img
+                                            id="foto-todasPostagens" class="rounded-circle foto-usuario"
+                                            src="{{item.usuario.foto}}" alt="foto" width="55px">
+                                        <i class="fas fa-chalkboard-teacher ms-1 fs-3 fw-bold text-white"></i>
+                                    </div>
+                                    <p class="text-white fs-4 fw-bolder">{{item.usuario.nome}}</p>
+                                    <p class="text-white fs-5 me-1 fw-bolder">{{item.tema.nome}} {{item.tema.serie}}</p>
+                                </div>
+
                                 <div class="mb-2">
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
                                     <p class="fs-3">{{item.conteudo}}</p>
@@ -133,21 +115,97 @@
                                     <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
                                             'HH:mm'}}</small></p>
                                 </div>
+
+                                <!--Comentarios -->
+                                <div class="accordion" [attr.id]="'comentPostagem' + item.id">
+
+                                    <div class="mt-2" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed text-dark" type="button"
+                                                data-bs-toggle="collapse"
+                                                [attr.data-bs-target]="'#' + 'comentButtonPostagem' + item.id"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <p class="text-primary font-weight-bold mb-2">
+                                                    <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
+                                                </p>
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div [attr.id]="'comentButtonPostagem' + item.id" class="collapse"
+                                        aria-labelledby="headingTwo"
+                                        [attr.data-parent]="'#' + 'comentPostagem' + item.id">
+
+                                        <div class="row mb-3">
+                                            <div class="col d-flex justify-content-center align-items-center p-4">
+                                                <img class="rounded-circle mr-3" src={{fotoUser}} width="30px"
+                                                    height="30px" />
+                                                <div class="input-group w-100">
+                                                    <input type="text" class="form-control mr-2"
+                                                        placeholder="Digite aqui seu comentário"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="button-addon2"
+                                                        [(ngModel)]='comentario.comentario'>
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary"
+                                                            (click)='comentar(item.id)'
+                                                            id="button-addon2">Comentar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center"
+                                            *ngFor='let coment of item.comentario | orderBy : key : reverse'>
+                                            <div class="col-md-11">
+                                                <div class="card mb-3 shadow border-0 rounded">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col d-flex justify-content-start">
+                                                                <p> <img class=rounded-circle
+                                                                        src={{coment.usuario.foto}} width="30px"
+                                                                        height="30px" />
+                                                                    {{coment.usuario.nome}} comentou: </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <p class="card-text ml-4" aria-describedby="texto">
+                                                                    {{coment.comentario}} </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr>
+
+                                                        <div class="d-flex justify-content-end">
+                                                            <small id="texto"
+                                                                class="form-text m-0 text-muted text-monospace">
+                                                                Comentado em {{ coment.date | date:'dd/MM/yyyy'}} às
+                                                                {{coment.date | date:'HH:mm'}}
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/Comentarios-->
                             </div>
-        
+
                         </div>
-        
+
                         <!-- /TODAS POSTAGENS -->
-        
+
                         <!-- MINHAS POSTAGENS -->
-        
+
                         <div class="tab-pane fade largura-abas-postagens me-3" id="nav-minhasPostagens" role="tabpanel"
                             aria-labelledby="nav-minhasPostagens-tab">
-        
+
                             <div *ngFor="let item of user.postagens | orderBy : key : reverse" class="row mt-2 ic-menu">
-        
-                                <div class="d-flex py-3 align-items-center justify-content-between ic-menu-{{(item.tema.id%5)+1}}">
-        
+
+                                <div
+                                    class="d-flex py-3 align-items-center justify-content-between ic-menu-{{(item.tema.id%5)+1}}">
+
                                     <p class="text-white fs-5 me-1">{{item.tema.nome}}</p>
                                 </div>
                                 <div class="mb-2">
@@ -164,7 +222,7 @@
                                         [routerLink]="['/postagens-delet', item.id]">Apagar</button>
                                 </div>
                             </div>
-        
+
                         </div>
                         <!-- /MINHAS POSTAGENS -->
                     </div>
@@ -173,7 +231,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 
@@ -201,7 +259,8 @@
                         <label for="recipient-name" class="col-form-label">Matéria:</label>
                         <select [(ngModel)]="idTema" name="tema" id="tema" class="form-select br-32"
                             (change)="findByIdTema()">
-                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">{{item.nome}} {{item.serie}}ª
+                            <option *ngFor="let item of listaTemas" selected value="{{item.id}}">{{item.nome}}
+                                {{item.serie}}ª
                             </option>
                         </select>
                     </div>
@@ -214,7 +273,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-efeito3 br-32" data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-efeito2 br-32 me-5" data-bs-dismiss="modal" (click)="publicar()">Postar!</button>
+                <button type="submit" class="btn btn-efeito2 br-32 me-5" data-bs-dismiss="modal"
+                    (click)="publicar()">Postar!</button>
             </div>
         </div>
     </div>

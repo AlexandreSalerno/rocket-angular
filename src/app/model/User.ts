@@ -1,3 +1,4 @@
+import { Comentario } from "./Comentario"
 import { Postagem } from "./Postagem"
 
 export class User {
@@ -9,4 +10,5 @@ export class User {
     public serie: number
     public instrutor: boolean
     public postagens: Postagem[]
+    public comentario: Comentario[]
 }

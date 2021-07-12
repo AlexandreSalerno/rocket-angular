@@ -24,7 +24,7 @@
                         <label for="tema" class="fs-18">Matéria</label>
                         <select [(ngModel)]="idTema" class="form-select mt-2" name="tema" id="tema" (change)="findByIdTema()">
                             <option *ngFor="let item of listaTemas" value="{{item.id}}">
-                                {{item.nome}}
+                                {{item.nome}} {{item.serie}}
                             </option>
                         </select>
                     </div>

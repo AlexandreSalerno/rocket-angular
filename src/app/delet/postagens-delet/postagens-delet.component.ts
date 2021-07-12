@@ -31,7 +31,7 @@ export class PostagensDeletComponent implements OnInit {
       this.router.navigate(['/entrar'])
       this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
-
+    this.postagensService.refreshToken()
     this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
     

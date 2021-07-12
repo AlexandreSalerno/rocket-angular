@@ -19,6 +19,7 @@ export class UserEditComponent implements OnInit {
   idUser: number
   confirmarSenha: string
   tipoUsuario: boolean
+  serie:number
 
   constructor(
     private authService: AuthService,
@@ -46,7 +47,6 @@ export class UserEditComponent implements OnInit {
     })
   }
 
-
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
@@ -61,10 +61,15 @@ export class UserEditComponent implements OnInit {
     })
   }
 
+  selectSerie(event: any) {
+    this.serie = event.target.value
+  }
+
   atualizar() {
     this.user.instrutor = this.tipoUsuario
     this.user.postagens = this.todasPostagens
-
+    this.user.serie = this.serie
+    
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('Confirme a senha!')
     } else {
