@@ -57,7 +57,11 @@ export class PostagensComponent implements OnInit {
       this.router.navigate(['/sobrenos'])
       this.alertas.showAlertLight('Sua sessão expirou, faça o login novamente!')
     }
+
     this.temaService.refreshToken()
+    this.postagemService.refreshToken()
+    this.comentarioService.refreshToken()
+
     if (environment.instrutor == true) {
       this.getAllTemas()
       this.getAllPostagens()
@@ -96,7 +100,6 @@ export class PostagensComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
-      console.log(resp)
     })
   }
 

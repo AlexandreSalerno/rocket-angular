@@ -35,12 +35,12 @@ export class EntrarComponent implements OnInit {
       environment.instrutor = this.userLogin.instrutor
       environment.id = this.userLogin.id
 
-      console.log('ID: '+environment.id)
-      console.log('TOKEN:' + environment.token)
-      console.log('NOME:' + environment.nome)
-      console.log('SERIE:' + environment.serie)
-      console.log('FOTO: ' + environment.foto)
-      console.log('INSTRUTOR: ' + environment.instrutor)
+      // console.log('ID: '+environment.id)
+      // console.log('TOKEN:' + environment.token)
+      // console.log('NOME:' + environment.nome)
+      // console.log('SERIE:' + environment.serie)
+      // console.log('FOTO: ' + environment.foto)
+      // console.log('INSTRUTOR: ' + environment.instrutor)
 
       this.router.navigate(["/postagens"])
     }, erro => {

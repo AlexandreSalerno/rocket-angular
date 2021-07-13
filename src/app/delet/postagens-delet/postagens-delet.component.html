@@ -28,9 +28,9 @@
         <div class="row d-flex justify-content-center my-2">
             <div class="col-md-8 ic-menu p-0">
                 <div class="d-flex justify-content-between ic-menu2 align-items-center">
-                    <img class="ms-1 rounded-circle foto-usuario" src="{{postagem.usuario.foto}}" alt="foto">
+                    <img class="ms-1 rounded-circle foto-usuario m-1" src="{{postagem.usuario.foto}}" alt="foto">
                     <h4 class="text-center fw-bold">{{postagem.usuario.nome}}</h4>
-                    <h4 class="fw-bold me-1">{{postagem.tema.nome}}</h4>
+                    <h4 class="fw-bold m-1">{{postagem.tema.nome}}</h4>
                 </div>
                 <!--{{postagem.titulo}}-->
                 <h1 class="mt-3 text-center">{{postagem.titulo}}</h1>
@@ -46,8 +46,8 @@
 
         <div class="row">
             <div class="col-md-12 d-flex justify-content-center ">
-                <button class="btn btn-danger me-2 #br-32" routerLink='/postagens'>Não</button>
-                <button class="btn btn-success" (click)='apagar()'>Sim</button>
+                <button class="btn btn-1 me-2 #br-32" routerLink='/postagens'>Não</button>
+                <button class="btn btn-2" (click)='apagar()'>Sim</button>
             </div>
 
         </div>
