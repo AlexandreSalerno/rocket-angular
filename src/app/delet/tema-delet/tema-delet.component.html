@@ -1,23 +1,23 @@
 <div class="container-fluid pt-5" id="img-bg-interior">
     <div class="row mt-2 mb-1">
         <div class="col-md-12 mt-5 text-center text-secondary">
-            <h1 class="mt-5 text-white">Apagar Matéria</h1>
+            <h1 class="mt-5 text-light">Apagar Matéria</h1>
         </div>
     </div>
-    <div class="row text-center text-dark ">
+    <div class="row text-center text-light">
         <div class="col-md-12">
             <p class="fw-bolder fs-2">Matéria: {{tema.nome}} </p>
         </div>
     </div>
     <div class="row mb-2 d-flex justify-content-center">
-        <div class="col-md-6 text-center text-white bg-custom border">
+        <div class="col-md-6 text-center br-32 text-dark ic-menu">
             <p class="fs-4">Essa ação será irreversível, tem certeza que deseja apagar essa Matéria? Todas as
                 postagens
                 relacionadas também serão apagadas.</p>
         </div>
     </div>
     <div class="d-flex justify-content-center mt-2">
-        <button class="btn btn-1 me-2 fs-4" routerLink='/tema'>Não</button>
-        <button class="btn btn-2 fs-4" (click)='deleteTema()'>Sim</button>
+        <button class="btn btn-efeito me-2 fs-4" routerLink='/tema'>Não</button>
+        <button class="btn btn-efeito fs-4" (click)='deleteTema()'>Sim</button>
     </div>
 </div>
