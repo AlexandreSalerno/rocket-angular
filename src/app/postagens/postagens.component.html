@@ -30,7 +30,7 @@
         </div>
     </div>
     <!-- /MENU -->
-    
+
     <!-- NOVA POSTAGENS -->
     <div class="row mt-5">
         <div class="col-md-12">
@@ -105,14 +105,34 @@
                                     <p class="text-white fs-4 fw-bolder">{{item.usuario.nome}}</p>
                                     <p class="text-white fs-5 me-1 fw-bolder">{{item.tema.nome}} {{item.tema.serie}}</p>
                                 </div>
-
                                 <div class="mb-2">
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
+
+                                    <!-- IMAGE -->
+                                    <div *ngIf="!(item.imagem == null || item.imagem =='')" class="mt-1">
+                                        <img src="{{ item.imagem }}" width="100%" height="100%" alt="" />
+                                    </div>
+                                    <!-- /IMAGE -->
+
+                                    <!-- VIDEO -->
+                                    <div *ngIf="!(item.videoSeguro.changingThisBreaksApplicationSecurity == null ||item.videoSeguro.changingThisBreaksApplicationSecurity == '')"
+                                        class="container my-1">
+                                        <div class="row config-video">
+                                            <iframe width="560" height="315" [src]="item.videoSeguro"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <!--/ VIDEO -->
+
                                     <p class="fs-3">{{item.conteudo}}</p>
                                     <hr>
-                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
+                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date |
+                                            date:
                                             'HH:mm'}}</small></p>
                                 </div>
+
 
                                 <!--Comentarios -->
                                 <div class="accordion" [attr.id]="'comentPostagem' + item.id">
@@ -209,8 +229,31 @@
                                 <div class="mb-2">
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
                                     <p class="fs-3">{{item.conteudo}}</p>
+
+                                    <!-- IMAGE -->
+                                    <div *ngIf="!(item.imagem == null || item.imagem =='')" class="mt-1">
+                                        <img src="{{item.imagem}}" width="100%" height="100%" alt="" />
+                                    </div>
+                                    <!-- /IMAGE -->
+                                    
+                                    <!-- VIDEO -->
+                                    <div *ngIf="!(item.video == null ||item.video == '')"
+                                        class="container my-1">
+                                        <div class="row config-video">
+                                            <iframe width="560" height="315" [src]="videoSec(item.video)"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <!--/ VIDEO -->
+
+
+
+
                                     <hr>
-                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date:
+                                    <p class="text-end"><small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date |
+                                            date:
                                             'HH:mm'}}</small></p>
                                 </div>
                                 <div class="d-flex justify-content-around ic-menu2-{{(item.tema.id%5)+1}}">
@@ -262,6 +305,24 @@
                             </option>
                         </select>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Imagem:</label>
+                        <div class="input-group ">
+                            <input [(ngModel)]="postagem.imagem" name="publi-image" class="form-control br-32" type="text" placeholder="Cole aqui o link da imagem" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="basic-url" class="form-label">Vídeo:</label>
+                        <div class="input-group">
+                            <span class="input-group-text br-32" id="exemplo youtube">https://www.youtube.com/</span>
+                            <input [(ngModel)]="postagem.video" name="publi-video" class=" form-control br-32" type="text" placeholder="Cole aqui o link do vídeo"
+                            (focusout)='videoemebed()'/>
+                        </div>
+                    </div>
+
+
+
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Conteudo:</label>
                         <textarea [(ngModel)]="postagem.conteudo" name="texto" id="texto" rows="3"

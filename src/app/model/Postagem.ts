@@ -7,8 +7,10 @@ export class Postagem {
     public date: Date
     public titulo: string
     public conteudo: string
-    public link: string
+    public imagem: string
+    public video: string
     public tema: Tema
     public usuario: User
     public comentario: Comentario[]
+    public videoSeguro: any
 }

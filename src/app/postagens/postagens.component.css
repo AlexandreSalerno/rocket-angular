@@ -236,3 +236,10 @@ p{
 .largura-abas-postagens {
     min-width: 60rem;
 }
+
+.config-video {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

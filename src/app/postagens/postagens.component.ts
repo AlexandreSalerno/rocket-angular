@@ -10,6 +10,7 @@ import { AuthService } from '../service/auth.service';
 import { ComentarioService } from '../service/comentario.service';
 import { PostagensService } from '../service/postagens.service';
 import { TemaService } from '../service/tema.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-postagens',
@@ -21,6 +22,9 @@ export class PostagensComponent implements OnInit {
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   tituloPost: string
+
+  videoSeguro: any;
+  videoNovo: string
 
   fotoUser = environment.foto
 
@@ -48,7 +52,8 @@ export class PostagensComponent implements OnInit {
     private postagemService: PostagensService,
     private temaService: TemaService,
     private alertas: AlertasService,
-    private comentarioService: ComentarioService
+    private comentarioService: ComentarioService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -99,7 +104,12 @@ export class PostagensComponent implements OnInit {
 
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
+      this.listaPostagens = []
+      resp.forEach((item) => {
+        let video = this.sanitizer.bypassSecurityTrustResourceUrl(item.video)
+        item.videoSeguro = video
+        this.listaPostagens.push(item)
+      })
     })
   }
 
@@ -119,7 +129,12 @@ export class PostagensComponent implements OnInit {
       }
     } else {
       this.postagemService.getByTemaId(number).subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
+        this.listaPostagens = []
+        resp.forEach((item) => {
+          let video = this.sanitizer.bypassSecurityTrustResourceUrl(item.video)
+          item.videoSeguro = video
+          this.listaPostagens.push(item)
+        })
       })
     }
   }
@@ -134,11 +149,21 @@ export class PostagensComponent implements OnInit {
     } else {
       if (environment.instrutor == true) {
         this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
-          this.listaPostagens = resp
+          this.listaPostagens = []
+          resp.forEach((item) => {
+            let video = this.sanitizer.bypassSecurityTrustResourceUrl(item.video)
+            item.videoSeguro = video
+            this.listaPostagens.push(item)
+          })
         })
       } else {
         this.postagemService.getByTituloAndSeriePostagem(this.tituloPost, this.serie).subscribe((resp: Postagem[]) => {
-          this.listaPostagens = resp
+          this.listaPostagens = []
+          resp.forEach((item) => {
+            let video = this.sanitizer.bypassSecurityTrustResourceUrl(item.video)
+            item.videoSeguro = video
+            this.listaPostagens.push(item)
+          })
         })
       }
     }
@@ -146,7 +171,12 @@ export class PostagensComponent implements OnInit {
 
   findBySeriePostagem(serie: number) {
     this.postagemService.getBySerieNumber(serie).subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
+      this.listaPostagens = []
+      resp.forEach((item) => {
+        let video = this.sanitizer.bypassSecurityTrustResourceUrl(item.video)
+        item.videoSeguro = video
+        this.listaPostagens.push(item)
+      })
     })
   }
 
@@ -158,6 +188,8 @@ export class PostagensComponent implements OnInit {
     this.user.serie = this.serie
     this.postagem.usuario = this.user
 
+    this.postagem.video = this.videoNovo
+
     // this.postagem.comentario = []
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
@@ -166,6 +198,7 @@ export class PostagensComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem enviada!')
 
       this.postagem = new Postagem()
+      this.videoNovo = ""
       this.getAllPostagens()
     })
   }
@@ -188,4 +221,14 @@ export class PostagensComponent implements OnInit {
     })
   }
 
+  videoemebed() {
+    this.videoNovo = this.postagem.video.replace("watch?v=", "embed/")
+    this.videoSeguro = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoNovo);
+  }
+
+  videoSec(vid: string) {
+    let nVideo: any
+    nVideo = this.sanitizer.bypassSecurityTrustResourceUrl(vid)
+    return nVideo
+  }
 }
