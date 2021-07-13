@@ -1,6 +1,6 @@
 
 .container-fluid{
-    background: linear-gradient(#c4085015, #d4dbfd15)
+    background: linear-gradient(#120b4d25, #1e265c60, #120b4d25)
 }
 .avatar-hover{
     position: relative;
@@ -32,5 +32,33 @@
     text-decoration: none;
     color: white;
   }
+
+
+
+  /*Style ferramentas utilizadas*/
+  
+  .overlay-tools {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(2, 2, 34, 0.911);
+    border-radius: 100%;
+    display: block;
+    
+  }
+  
+  .avatar-hover-tools:hover .overlay-tools {
+    opacity: 0.7;
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+  }
+
+
   
   
