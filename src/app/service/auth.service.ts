@@ -21,9 +21,10 @@ export class AuthService {
   cadastrar(user: User): Observable<User> {
     return this.http.post<User>(`${environment.uri}/usuarios/cadastrar`, user) //url local
   }
-
+  
+  // PRECISA SER MUDADO
   editCadastro(user: User): Observable<User> {
-    return this.http.put<User>(`${environment.uri}/usuarios/cadastrar`, user)
+    return this.http.put<User>(`${environment.uri}/usuarios/editar`, user)
   }
 
   logado() {
@@ -33,6 +34,4 @@ export class AuthService {
     }
     return ok
   }
-  
-
 }

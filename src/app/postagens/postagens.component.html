@@ -228,8 +228,7 @@
                                 </div>
                                 <div class="mb-2">
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
-                                    <p class="fs-3">{{item.conteudo}}</p>
-
+                                    
                                     <!-- IMAGE -->
                                     <div *ngIf="!(item.imagem == null || item.imagem =='')" class="mt-1">
                                         <img src="{{item.imagem}}" width="100%" height="100%" alt="" />
@@ -238,15 +237,16 @@
                                     
                                     <!-- VIDEO -->
                                     <div *ngIf="!(item.video == null ||item.video == '')"
-                                        class="container my-1">
-                                        <div class="row config-video">
-                                            <iframe width="560" height="315" [src]="videoSec(item.video)"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-                                        </div>
+                                    class="container my-1">
+                                    <div class="row config-video">
+                                        <iframe width="560" height="315" [src]="videoSec(item.video)"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
                                     </div>
                                     <!--/ VIDEO -->
+                                    <p class="fs-3">{{item.conteudo}}</p>
+                                </div>
 
 
 

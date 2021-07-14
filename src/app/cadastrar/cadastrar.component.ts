@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  user: User = new User
+  user: User = new User ()
   confirmarSenha: string
   tipoUsuario: boolean
   serie: number
@@ -49,6 +49,7 @@ export class CadastrarComponent implements OnInit {
         this.user = resp
         this.router.navigate(['/entrar'])
         this.alertas.showAlertSuccess('Usuario cadastrado com Sucesso!')
+        this.user = new User ()
 
       }, erro => {
         if (erro.status == 409) {
@@ -57,6 +58,11 @@ export class CadastrarComponent implements OnInit {
         
       })
     }
+  }
+
+  cancel(){
+    this.user = new User()
+    this.router.navigate(['/sobrenos'])
   }
 
 }

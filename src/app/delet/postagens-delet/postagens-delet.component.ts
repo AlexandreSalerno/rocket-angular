@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { AlertasService } from 'src/app/service/alertas.service';
@@ -20,7 +21,8 @@ export class PostagensDeletComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postagensService: PostagensService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private sanitizer:DomSanitizer
    
   ) { }
 
@@ -49,6 +51,12 @@ export class PostagensDeletComponent implements OnInit {
       this.router.navigate(['/postagens'])
     })
     
+  }
+
+  videoSec(vid: string) {
+    let nVideo: any
+    nVideo = this.sanitizer.bypassSecurityTrustResourceUrl(vid)
+    return nVideo
   }
   
 }
