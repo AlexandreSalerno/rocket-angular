@@ -1,12 +1,13 @@
-#bg-tema{
-    background-image: url('https://i.imgur.com/DHQKSpC.jpg');
-
-    /* min-height: 40rem; */
+#img-bg-interior{
+    background: rgb(54,54,54);
+    background: radial-gradient(circle, rgba(54,54,54,1) 1%, rgba(128,128,128,1) 49%, rgba(79,79,79,1) 100%);
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 
 .br-32 {
     border-radius: 32px;
@@ -29,4 +30,36 @@
 
 .bg-light {
     background-color: rgba(255, 255, 255, 0.644)!important;
+}
+
+.bt-ed-2{
+    background:#FE3745;
+    font-weight: bold;
+    color:#B7092B;
+    font-size: medium;
+    border-radius: 32px;
+    border: 1px solid gray;
+}
+.bt-ed-2:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+
+.bt-ed-1{
+    background: #0D6E99;
+    font-weight: bold;
+    color:#1A2B63;
+    font-size: medium;
+    border-radius: 32px;
+    border: 1px solid gray;
+}
+.bt-ed-1:hover{
+    color: rgb(2, 0, 34);
+    background-color: white;
+
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
 }

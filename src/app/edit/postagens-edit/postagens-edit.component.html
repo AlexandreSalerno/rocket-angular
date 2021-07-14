@@ -12,17 +12,17 @@
         
                     <div class="form-group">
                         <label for="titulo" class="fs-18">Título</label>
-                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control mt-2" id="titulo" placeholder="Digite o título">
+                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control mt-2 br-32" id="titulo" placeholder="Digite o título">
                     </div>
         
                     <div class="form-group mt-3">
                         <label for="conteudo" class="fs-18">Conteúdo</label>
-                        <textarea [(ngModel)]="postagem.conteudo" class="form-control mt-2" name="conteudo" id="conteudo" rows="3"></textarea>
+                        <textarea [(ngModel)]="postagem.conteudo" class="form-control mt-2 br-32" name="conteudo" id="conteudo" rows="3"></textarea>
                     </div>
         
                     <div class="form-group mt-3">
                         <label for="tema" class="fs-18">Matéria</label>
-                        <select [(ngModel)]="idTema" class="form-select mt-2" name="tema" id="tema" (change)="findByIdTema()">
+                        <select [(ngModel)]="idTema" class="form-select mt-2 br-32" name="tema" id="tema" (change)="findByIdTema()">
                             <option *ngFor="let item of listaTemas" value="{{item.id}}">
                                 {{item.nome}} {{item.serie}}
                             </option>

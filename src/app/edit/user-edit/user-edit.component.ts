@@ -64,7 +64,7 @@ export class UserEditComponent implements OnInit {
     this.serie = event.target.value
   }
 
-  atualizar() {
+  editar() {
     this.user.instrutor = this.tipoUsuario
     this.user.postagens = this.todasPostagens
     this.user.serie = this.serie
@@ -72,7 +72,7 @@ export class UserEditComponent implements OnInit {
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('Confirme a senha!')
     } else {
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+      this.authService.editCadastro(this.user).subscribe((resp: User) => {
         this.user = resp
         this.alertas.showAlertSuccess("Conta atualizada com sucesso, faça o login novamente!")
 

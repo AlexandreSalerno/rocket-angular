@@ -1,28 +1,32 @@
 #img-bg-interior{
-    background-image: url('https://i.imgur.com/DHQKSpC.jpg');
+    background: rgb(54,54,54);
+    background: radial-gradient(circle, rgba(54,54,54,1) 1%, rgba(128,128,128,1) 49%, rgba(79,79,79,1) 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
 }
 
-button {
+/* button {
     width: 12rem;
     height: 50px;
     justify-content: center;
-}
+} */
 
 .btn-efeito{
-    color: rgb(26, 55, 99);
-    background-color: rgba(255, 255, 255, 0.212);;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.37);;
 
     border-radius: 32px;
     border: 1px solid white;
 }
 .btn-efeito:hover{
-    color: rgb(31, 28, 82);
+    color: rgb(2, 0, 34);
     background-color: white;
 
-    -webkit-box-shadow: 0px 0px 50px 10px rgba(58, 52, 148, 0.651); 
-    box-shadow: 0px 0px 50px 10px rgba(35, 64, 126, 0.637);
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28); 
+    box-shadow: 0px 0px 50px 10px rgba(218,166,255,0.28);
+}
+.br-32 {
+    border-radius: 32px;
 }
