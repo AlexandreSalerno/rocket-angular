@@ -8,5 +8,5 @@ export const environment = {
   serie:0,
 
   // uri:'http://localhost:8080'
-  uri:'https://test-back-rocket.herokuapp.com'
+  uri:'https://rocket-beta-test.herokuapp.com'
 };

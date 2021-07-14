@@ -22,6 +22,10 @@ export class AuthService {
     return this.http.post<User>(`${environment.uri}/usuarios/cadastrar`, user) //url local
   }
 
+  editCadastro(user: User): Observable<User> {
+    return this.http.put<User>(`${environment.uri}/usuarios/cadastrar`, user)
+  }
+
   logado() {
     let ok: boolean = false
     if (environment.token != '') {
