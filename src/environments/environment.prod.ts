@@ -7,6 +7,6 @@ export const environment = {
   instrutor: false,
   serie:0,
 
-  // uri:'http://localhost:8080'
-  uri:'https://rocket-beta-test.herokuapp.com'
+  uri:'http://localhost:8080'
+  // uri:'https://rocket-beta-test.herokuapp.com'
 };
