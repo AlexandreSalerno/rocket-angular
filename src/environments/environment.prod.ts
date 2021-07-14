@@ -9,4 +9,5 @@ export const environment = {
 
   //uri:'http://localhost:8080'
   uri:'https://projetorocket.herokuapp.com/'
+
 };
