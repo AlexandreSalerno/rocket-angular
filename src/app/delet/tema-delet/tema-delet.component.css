@@ -1,6 +1,6 @@
 #img-bg-interior{
-    background: rgb(54,54,54);
-    background: radial-gradient(circle, rgba(54,54,54,1) 1%, rgba(128,128,128,1) 49%, rgba(79,79,79,1) 100%);
+    background: rgb(124,154,154);
+    background: linear-gradient(0deg, rgba(124,154,154,1) 0%, rgba(88,106,121,1) 76%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

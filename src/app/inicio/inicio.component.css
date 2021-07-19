@@ -1,6 +1,6 @@
 #img-bg-interior{
-    background: rgb(54,54,54);
-    background: radial-gradient(circle, rgba(54,54,54,1) 1%, rgba(128,128,128,1) 49%, rgba(79,79,79,1) 100%);
+    background: rgb(124,154,154);
+    background: linear-gradient(0deg, rgba(124,154,154,1) 0%, rgba(88,106,121,1) 76%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,7 +27,7 @@ h1{
     text-shadow: 0 0 4px rgb(43, 26, 196), 0 0 26px rgb(48, 23, 185);
 
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #69CDFF;
+    -webkit-text-stroke-color: #78b6d4;
 }
 
 .bt-ed-1{
@@ -92,9 +92,9 @@ h1{
     box-shadow: 0px 0px 50px 10px #FF9518;
 }
 .bt-ed-5{
-    background:#69CDFF;
+    background:#70a0b8;
     font-weight: bold;
-    color:#0D6E99;
+    color:#1e5270;
     font-size: large;
     border-radius: 32px;
     border: 1px solid gray;
@@ -116,10 +116,11 @@ h1{
 }
 
 a{
-    text-decoration:none
+    text-decoration:none;
+    color:#1e5270;
 }
 
 a:hover{
-    text-decoration:none
+    text-decoration:none;
+    color: #69CDFF;
 }
-
