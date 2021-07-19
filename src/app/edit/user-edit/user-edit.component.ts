@@ -81,7 +81,7 @@ export class UserEditComponent implements OnInit {
         environment.foto = ''
         environment.id = 0
 
-        this.router.navigate(['/postagens'])
+        this.router.navigate(['/entrar'])
 
       })
     }
