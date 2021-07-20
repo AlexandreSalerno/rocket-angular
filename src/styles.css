@@ -40,6 +40,9 @@ html{
     min-height: 100vh;
 }
 
+.mw-1000 {
+    max-width: 1000px;
+}
 
 *{
     font-family: 'Nunito', sans-serif;
