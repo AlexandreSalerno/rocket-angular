@@ -8,6 +8,6 @@ export const environment = {
   serie:0,
 
   //uri:'http://localhost:8080'
-  uri:'https://projetorocket.herokuapp.com'
+  uri:'https://projetorocket2.herokuapp.com'
 
 };

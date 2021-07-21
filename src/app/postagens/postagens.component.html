@@ -55,9 +55,10 @@
                     <nav>
                         <div class="nav nav-tabs d-flex justify-content-start largura-abas-postagens mt-3" id="nav-tab"
                             role="tablist">
-                            <button class="nav-link active text-dark fw-bold btn-efeito me-2" id="nav-todasPostagens-tab"
-                                data-bs-toggle="tab" data-bs-target="#nav-todasPostagens" type="button" role="tab"
-                                aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</button>
+                            <button class="nav-link active text-dark fw-bold btn-efeito me-2"
+                                id="nav-todasPostagens-tab" data-bs-toggle="tab" data-bs-target="#nav-todasPostagens"
+                                type="button" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas
+                                as Postagens</button>
 
                             <button class="nav-link text-dark fw-bold btn-efeito" id="nav-minhasPostagens-tab"
                                 data-bs-toggle="tab" data-bs-target="#nav-minhasPostagens" type="button" role="tab"
@@ -109,8 +110,9 @@
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
 
                                     <!-- IMAGE -->
-                                    <div *ngIf="!(item.imagem == null || item.imagem =='')" class="text-center mt-3 mb-3">
-                                        <img src="{{ item.imagem }}" style="max-width: 1000px;" alt="" />
+                                    <div *ngIf="!(item.imagem == null || item.imagem =='')"
+                                        class="text-center mt-3 mb-3">
+                                        <img src="{{ item.imagem }}" class="mw-1000" alt="" />
                                     </div>
                                     <!-- /IMAGE -->
 
@@ -228,27 +230,25 @@
                                 </div>
                                 <div class="mb-2">
                                     <p class="text-center fs-1 fw-bold">{{item.titulo}}</p>
-                                    
+
                                     <!-- IMAGE -->
-                                    <div *ngIf="!(item.imagem == null || item.imagem =='')" class="mt-1">
-                                        <img src="{{item.imagem}}" width="100%" height="100%" alt="" />
+                                    <div *ngIf="!(item.imagem == null || item.imagem =='')"
+                                        class="text-center mt-3 mb-3">
+                                        <img src="{{item.imagem}}" class="mw-1000" alt="" />
                                     </div>
                                     <!-- /IMAGE -->
-                                    
+
                                     <!-- VIDEO -->
-                                    <div *ngIf="!(item.video == null ||item.video == '')"
-                                    class="container my-1">
-                                    <div class="row config-video">
-                                        <iframe width="560" height="315" [src]="videoSec(item.video)"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
+                                    <div *ngIf="!(item.video == null ||item.video == '')" class="container my-1">
+                                        <div class="row config-video">
+                                            <iframe width="560" height="315" [src]="videoSec(item.video)"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                        <!--/ VIDEO -->
                                     </div>
-                                    <!--/ VIDEO -->
                                     <p class="fs-3">{{item.conteudo}}</p>
-                                </div>
-
-
 
 
                                     <hr>
@@ -309,15 +309,16 @@
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Imagem:</label>
                         <div class="input-group ">
-                            <input [(ngModel)]="postagem.imagem" name="publi-image" class="form-control br-32" type="text" placeholder="Cole aqui o link da imagem" />
+                            <input [(ngModel)]="postagem.imagem" name="publi-image" class="form-control br-32"
+                                type="text" placeholder="Cole aqui o link da imagem" />
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="basic-url" class="form-label">Vídeo:</label>
                         <div class="input-group">
                             <span class="input-group-text br-32" id="exemplo youtube">https://www.youtube.com/</span>
-                            <input [(ngModel)]="postagem.video" name="publi-video" class=" form-control br-32" type="text" placeholder="Cole aqui o link do vídeo"
-                            (focusout)='videoemebed()'/>
+                            <input [(ngModel)]="postagem.video" name="publi-video" class=" form-control br-32"
+                                type="text" placeholder="Cole aqui o link do vídeo" (focusout)='videoemebed()' />
                         </div>
                     </div>
 
