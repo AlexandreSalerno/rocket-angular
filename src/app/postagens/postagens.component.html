@@ -141,12 +141,12 @@
 
                                     <div class="mt-2" id="headingTwo">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed text-dark" type="button"
+                                            <button class="btn btn-link collapsed text-dark br-32" type="button"
                                                 data-bs-toggle="collapse"
                                                 [attr.data-bs-target]="'#' + 'comentButtonPostagem' + item.id"
                                                 aria-expanded="false" aria-controls="collapseTwo">
                                                 <p class="text-primary font-weight-bold mb-2">
-                                                    <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
+                                                    <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentários
                                                 </p>
                                             </button>
                                         </h5>
@@ -166,18 +166,19 @@
                                                         aria-label="Recipient's username"
                                                         aria-describedby="button-addon2"
                                                         [(ngModel)]='comentario.comentario'>
+
                                                     <div class="input-group-append">
-                                                        <button class="btn btn-outline-primary br-32"
+                                                        <button class="btn btn-efeito2 br-32"
                                                             (click)='comentar(item.id)'
                                                             id="button-addon2">Comentar</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row d-flex justify-content-center br-32"
+                                        <div class="row d-flex justify-content-center"
                                             *ngFor='let coment of item.comentario | orderBy : key : reverse'>
                                             <div class="col-md-11">
-                                                <div class="card mb-3 shadow br-32 border-0 rounded">
+                                                <div class="ic-menu mb-3 shadow border-3">
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col d-flex justify-content-start">
